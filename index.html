@@ -52,6 +52,604 @@
     -moz-osx-font-smoothing:grayscale;
   }
 
+    <style>
+    :root{
+      --bg: #f7f4f2;
+      --panel: #ffffff;
+      --panel-soft: #f1efee;
+      --text: #111111;
+      --muted: #4a4a4a;
+      --line: #d9d3cf;
+      --accent: #7d1f1f;
+      --accent-2: #a63131;
+      --shadow: 0 12px 28px rgba(17,17,17,0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height:1.6;
+    }
+    a{ color: inherit; text-decoration: none; }
+    img{ max-width:100%; display:block; }
+    .container{
+      width:min(1180px, 92%);
+      margin:0 auto;
+    }
+
+    .topbar{
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .topbar-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      min-height:76px;
+      gap:20px;
+    }
+
+    .brand{
+      font-size: clamp(1.1rem, 2vw, 1.8rem);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .brand span{
+      color: var(--accent);
+    }
+
+    .contact{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:700;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .contact-badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background: var(--accent);
+      color:#fff;
+      width:28px;
+      height:28px;
+      border-radius:50%;
+      font-size:0.8rem;
+      font-weight:700;
+    }
+
+    .hero{
+      background: var(--panel);
+      padding: 80px 0 60px;
+      border-bottom:1px solid var(--line);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      padding:8px 14px;
+      border:1px solid var(--accent);
+      color: var(--accent);
+      background: rgba(125,31,31,0.05);
+      font-size:0.72rem;
+      font-weight:700;
+      letter-spacing:0.08em;
+      text-transform: uppercase;
+      border-radius:999px;
+    }
+
+    h1{
+      font-size: clamp(2.5rem, 4vw, 4.5rem);
+      line-height:1.05;
+      margin: 18px 0 20px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p{
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 620px;
+      margin:0 0 28px;
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-bottom: 22px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:52px;
+      padding: 0 24px;
+      border-radius: 999px;
+      border:1px solid var(--text);
+      font-weight:700;
+      transition: .2s ease;
+      cursor:pointer;
+    }
+
+    .btn-primary{
+      background: var(--accent);
+      color:#fff;
+      border-color: var(--accent);
+    }
+
+    .btn-secondary{
+      background: transparent;
+      color: var(--text);
+      border-color: var(--text);
+    }
+
+    .btn:hover{
+      transform: translateY(-1px);
+    }
+
+    .hero-card{
+      background: linear-gradient(180deg, #faf7f6, #f0ecea);
+      border:1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 26px;
+      min-height: 360px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+    }
+
+    .mock-box{
+      width:100%;
+      min-height: 300px;
+      border:1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(135deg, #ffffff, #f1e9e7);
+      display:grid;
+      place-items:center;
+      color: var(--accent);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-align:center;
+      padding:30px;
+    }
+
+    section{
+      padding: 80px 0;
+    }
+
+    .section-head{
+      margin-bottom: 34px;
+      text-align:center;
+    }
+    .section-head h2{
+      font-size: clamp(2rem, 3vw, 3rem);
+      margin:0 0 12px;
+      letter-spacing:-0.03em;
+    }
+    .section-head p{
+      margin:0 auto;
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .why-grid{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:20px;
+    }
+
+    .info-card{
+      background: var(--panel);
+      border:1px solid var(--line);
+      border-radius: 18px;
+      padding: 28px 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .info-card .number{
+      font-size:2.2rem;
+      font-weight:800;
+      color: var(--accent);
+      margin-bottom:10px;
+      display:block;
+    }
+
+    .info-card h3{
+      font-size:1.25rem;
+      margin:0 0 8px;
+    }
+
+    .info-card p{
+      margin:0;
+      color: var(--muted);
+      font-size:0.98rem;
+    }
+
+    .quality{
+      background: var(--panel);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .quality-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:30px;
+      align-items:center;
+    }
+
+    .text-block{
+      background: var(--panel-soft);
+      border:1px solid var(--line);
+      border-radius: 22px;
+      padding: 34px 28px;
+    }
+
+    .text-block h3{
+      font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+      margin:0 0 16px;
+      letter-spacing:-0.04em;
+    }
+
+    .text-block p{
+      color: var(--muted);
+      margin:0;
+      font-size:1.02rem;
+    }
+
+    .quality-box{
+      min-height: 320px;
+      border:1px solid var(--line);
+      border-radius: 24px;
+      background: linear-gradient(180deg, #f8f4f3, #efeae8);
+      display:grid;
+      place-items:center;
+      font-weight:700;
+      color: var(--accent);
+      text-align:center;
+      padding:26px;
+    }
+
+    .cases{
+      background: var(--panel);
+    }
+
+    .cases-grid{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:22px;
+    }
+
+    .case-card{
+      background: var(--panel-soft);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:26px 22px;
+    }
+
+    .case-card h3{
+      margin:0 0 10px;
+      font-size:1.22rem;
+    }
+
+    .case-card p{
+      margin:0;
+      color: var(--muted);
+    }
+
+    .security{
+      background: var(--panel-soft);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .security-box{
+      max-width: 980px;
+      margin: 0 auto;
+      background: var(--panel);
+      border:1px solid var(--line);
+      border-radius: 22px;
+      padding: 36px 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .security-box h3{
+      margin:0 0 16px;
+      font-size: clamp(1.7rem, 2.7vw, 2.5rem);
+      letter-spacing:-0.03em;
+    }
+
+    .security-box p{
+      margin:0;
+      color: var(--muted);
+      font-size:1.02rem;
+    }
+
+    .cta{
+      padding: 90px 0;
+      background: var(--panel);
+    }
+
+    .cta-box{
+      text-align:center;
+      background: linear-gradient(180deg, #faf7f6, #f2efee);
+      border:1px solid var(--line);
+      border-radius: 26px;
+      padding: 60px 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box h2{
+      font-size: clamp(2rem, 3vw, 3rem);
+      margin: 0 0 16px;
+      letter-spacing:-0.04em;
+    }
+
+    .cta-box p{
+      max-width: 720px;
+      margin: 0 auto 26px;
+      color: var(--muted);
+      font-size:1.03rem;
+    }
+
+    .footer{
+      background: #111111;
+      color: #f5f5f5;
+      padding: 32px 0;
+    }
+
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .footer small{
+      opacity:0.8;
+    }
+
+    @media (max-width: 900px){
+      .hero-grid,
+      .quality-grid,
+      .cases-grid{
+        grid-template-columns: 1fr;
+      }
+      .why-grid{
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 620px){
+      .topbar-inner{
+        flex-direction:column;
+        justify-content:center;
+        align-items:flex-start;
+        padding:18px 0;
+      }
+      .contact{
+        white-space: normal;
+      }
+      .why-grid{
+        grid-template-columns: 1fr;
+      }
+      .btn{
+        width:100%;
+      }
+      .actions{
+        flex-direction:column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        Consultorio de <span>Endocrinologia Cientifica</span>
+      </div>
+
+      <div class="contact">
+        <span class="contact-badge">T</span>
+        <a href="https://t.me/MetaenGuerra1" target="_blank" rel="noopener">T.me/MetaenGuerra1</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Especialistas en salud hormonal</span>
+          <h1>Mejoramos tu salud desde la raíz del equilibrio endocrino.</h1>
+          <p>
+            En Consultorio de Endocrinologia Cientifica trabajamos con un enfoque clínico,
+            moderno y personalizado para ayudar a pacientes con alteraciones hormonales,
+            metabolismo, tiroides, energía, peso y bienestar integral.
+          </p>
+
+          <div class="actions">
+            <a href="https://t.me/MetaenGuerra1" target="_blank" rel="noopener" class="btn btn-primary">Contactar por Telegram</a>
+            <a href="#contacto" class="btn btn-secondary">Solicitar consulta</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="mock-box">
+            Consultoría clínica<br>
+            en endocrinología
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2>¿Por qué los pacientes nos eligen?</h2>
+          <p>
+            Porque cada caso se analiza con profundidad, responsabilidad y un criterio médico
+            serio, adaptado a la realidad clínica de cada persona.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <article class="info-card">
+            <span class="number">01</span>
+            <h3>Diagnóstico claro</h3>
+            <p>Analizamos la historia clínica, los síntomas y los datos médicos con rigor.</p>
+          </article>
+
+          <article class="info-card">
+            <span class="number">02</span>
+            <h3>Enfoque integral</h3>
+            <p>Consideramos hormonal, metabólico, emocional y del estilo de vida para una atención real.</p>
+          </article>
+
+          <article class="info-card">
+            <span class="number">03</span>
+            <h3>Atención personalizada</h3>
+            <p>No aplicamos soluciones genéricas: cada plan se adapta al caso y al paciente.</p>
+          </article>
+
+          <article class="info-card">
+            <span class="number">04</span>
+            <h3>Trato humano</h3>
+            <p>Escuchamos, explicamos y acompañamos con respeto, discreción y profesionalismo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quality">
+      <div class="container quality-grid">
+        <div class="text-block">
+          <h3>Excelencia en calidad europea</h3>
+          <p>
+            Nuestro criterio se basa en estándares europeos de evaluación clínica, enfoque científico
+            y atención responsable. Buscamos claridad, precisión y continuidad en cada proceso,
+            sin improvisaciones ni promesas vacías.
+          </p>
+        </div>
+
+        <div class="quality-box">
+          CRITERIO CLÍNICO<br>
+          DE CALIDAD EUROPEA
+        </div>
+      </div>
+    </section>
+
+    <section class="cases">
+      <div class="container">
+        <div class="section-head">
+          <h2>Casos complejos resueltos con técnicas avanzadas actuales</h2>
+          <p>
+            Hemos logrado intervenir en situaciones clínicas difíciles mediante estrategias modernas,
+            evaluación detallada y un enfoque técnico actualizado.
+          </p>
+        </div>
+
+        <div class="cases-grid">
+          <article class="case-card">
+            <h3>Casos de alteración hormonal difícil de interpretar</h3>
+            <p>
+              Se abordan con un análisis preciso del contexto clínico, síntomas, laboratorio y evolución,
+              buscando encontrar la causa real y no solo el síntoma.
+            </p>
+          </article>
+
+          <article class="case-card">
+            <h3>Pacientes con síntomas persistentes y diagnóstico incompleto</h3>
+            <p>
+              Cuando el paciente ha recorrido varios caminos sin claridad, se reevalúa el caso desde
+              una perspectiva endocrinológica más completa y estructurada.
+            </p>
+          </article>
+
+          <article class="case-card">
+            <h3>Metabolismo, energía y rendimiento</h3>
+            <p>
+              Se trabaja en la raíz de los desequilibrios que afectan peso, energía, sueño, ánimo,
+              presión o resistencia metabólica.
+            </p>
+          </article>
+
+          <article class="case-card">
+            <h3>Protocolos con criterio actualizado</h3>
+            <p>
+              La práctica combina conocimiento actual, seguimiento prudente y decisiones clínicas con
+              una mirada rigurosa y moderna.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="security">
+      <div class="container">
+        <div class="security-box">
+          <h3>Respeto a la Ley de Protección de Datos y trato cordial</h3>
+          <p>
+            La información del paciente se maneja con discreción, profesionalismo y respeto a la normativa
+            vigente en materia de protección de datos. Cada consulta se desarrolla en un ambiente cordial,
+            claro y digno, con una atención centrada en la confianza, la privacidad y la responsabilidad.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <h2>¿Estás listo para mejorar tu salud?</h2>
+          <p>
+            Si buscas una atención endocrinológica seria, clara y centrada en tu bienestar,
+            te ayudamos a avanzar con criterio y confianza.
+          </p>
+
+          <div class="actions" style="justify-content:center;">
+            <a href="https://t.me/MetaenGuerra1" target="_blank" rel="noopener" class="btn btn-primary">Contacto</a>
+            <a href="https://t.me/MetaenGuerra1" target="_blank" rel="noopener" class="btn btn-secondary">T.me/MetaenGuerra1</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <small>Consultorio de Endocrinologia Cientifica</small>
+      <small>Contacto: T.me/MetaenGuerra1</small>
+    </div>
+  </footer>
+
+</body>
+</html>
           </a>
         </address>
       </footer>
