@@ -1,0 +1,73 @@
+# 1.
+User-agent: *
+Allow: /
+
+# --- BLOQUEO TOTAL DE GOOGLE Y BING ---
+# Bloquea el rastreador principal de Google
+User-agent: Googlebot
+Disallow: /
+
+# Bloquea Google Imágenes, Videos y Noticias
+User-agent: Googlebot-Image
+Disallow: /
+User-agent: Googlebot-Video
+Disallow: /
+User-agent: Googlebot-News
+Disallow: /
+
+# Bloquea otros rastreadores de Google (Ads, etc.)
+User-agent: AdsBot-Google
+Disallow: /
+User-agent: Mediapartners-Google
+Disallow: /
+
+# Bloquea el rastreador principal de Bing
+User-agent: bingbot
+Disallow: /
+
+# 2.
+# --- PERMISO PARA OTRAS IAS Y BRAVE ---
+# OpenAI (ChatGPT)
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+# Common Crawl
+User-agent: CCBot
+Allow: /
+
+# Brave Search & Leo
+User-agent: Bravebot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# 4.
+Sitemap: https://grossmeisteriii.github.io/DieOrden/sitemap.xml
