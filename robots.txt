@@ -2,28 +2,27 @@
 User-agent: *
 Allow: /
 
-# --- BLOQUEO TOTAL DE GOOGLE Y BING ---
-# Bloquea el rastreador principal de Google
+# GOOGLE Y BING ---
 User-agent: Googlebot
-Disallow: /
+Allow: /
 
-# Bloquea Google Imágenes, Videos y Noticias
+# Google Imágenes, Videos y Noticias
 User-agent: Googlebot-Image
-Disallow: /
+Allow: /
 User-agent: Googlebot-Video
-Disallow: /
+Allow: /
 User-agent: Googlebot-News
-Disallow: /
+Allow: /
 
-# Bloquea otros rastreadores de Google (Ads, etc.)
+# Google (Ads, etc.)
 User-agent: AdsBot-Google
-Disallow: /
+Allow: /
 User-agent: Mediapartners-Google
-Disallow: /
+Allow: /
 
-# Bloquea el rastreador principal de Bing
+# rastreador principal de Bing
 User-agent: bingbot
-Disallow: /
+Allow: /
 
 # 2.
 # --- PERMISO PARA OTRAS IAS Y BRAVE ---
@@ -70,4 +69,4 @@ User-agent: CCBot
 Allow: /
 
 # 4.
-Sitemap: https://grossmeisteriii.github.io/DieOrden/sitemap.xml
+Sitemap: https://dreugen.github.io/EndocrinologiaCientifica/sitemap.xml
