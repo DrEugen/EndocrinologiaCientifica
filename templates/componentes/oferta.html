@@ -1,0 +1,48 @@
+<section id="oferta" class=" py-24 bg-{{ info.estilo.bg_debil }}">
+    <div class='{{ info.estilo.sub_contenedor }}'>
+        <div class="{{ info.estilo.oferta.contenedor }} {{ info.estilo.bg_claro }} border-[{{ info.estilo.color_tema }}]">
+            
+            <div class=" bg-[{{ info.estilo.color_tema }}] {{ info.estilo.oferta.header }} {{ info.estilo.texto_claro }}">
+                <span class="{{ info.estilo.oferta.pre_titulo }}"> {{ contenido.oferta.pre_titulo }} </span>
+                <h2 class="{{ info.estilo.oferta.titulo }}">
+                    {{ contenido.oferta.titulo }}
+                </h2>
+            </div>
+
+            <div class="{{ info.estilo.oferta.cuerpo }}">
+                <p class="text-lg {{ info.estilo.texto_medio }} mb-8 text-center max-w-2xl mx-auto">
+                    {{ contenido.oferta.descripcion | safe }}
+                </p>
+
+                <div class="{{ info.estilo.oferta.grid }}">
+                    {% for item in contenido.oferta.incluye %}
+                    <div class="{{ info.estilo.oferta.item_lista }} border-{{ info.estilo.borde_debil }}">
+                        <span class="{{ info.estilo.oferta.check_icono }} text-[{{ info.estilo.color_secundario }}]">✓</span>
+                        <span class="{{ info.estilo.texto_medio_fuerte }} font-medium">{{ item | safe}}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+                <!--
+                <div class="{{ info.estilo.oferta.garantia_box }}">
+                    <div class="text-4xl">🛡️</div>
+                    <div>
+                        <h4 class="font-bold text-amber-900 mb-1"> {{ contenido.oferta.t_garantia }} </h4>
+                        <p class="text-amber-800 text-sm italic">
+                            "{{ contenido.oferta.garantia }}"
+                        </p>
+                    </div>
+                </div>
+                -->
+                <div class="{{ info.estilo.oferta.est_limite }}">
+                    <p class="text-sm {{ info.estilo.texto_medio_debil }} mb-4 font-medium uppercase tracking-tighter"> {{ contenido.oferta.limite }} </p>
+                    <div class="{{ info.estilo.oferta.escala_boton }}">
+                        <a href="#contacto" 
+                        class=" bg-[{{ info.estilo.color_tema }}] hover:bg-[{{ info.estilo.color_secundario }}] {{ info.estilo.boton_primario }} w-full sm:w-auto text-center whitespace-normal md:whitespace-nowrap px-4 md:px-8">
+                            Agendar Mi Evaluación Ahora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

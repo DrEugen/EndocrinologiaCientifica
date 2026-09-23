@@ -1,0 +1,180 @@
+<section class="py-20 bg-[#5BBFA3]">
+    <div class="max-w-2xl mx-auto px-6">
+        
+        <div class="text-center mb-12">
+            <span class="text-[#208884] font-black uppercase tracking-[0.3em] text-xs bg-white/20 px-4 py-1.5 rounded-full">
+                Casos de Éxito
+            </span>
+            <h2 class="text-3xl md:text-5xl font-black text-[#FEFFFE] leading-tight mb-6 mt-6">
+                Precisión en cada pieza, <br class="hidden md:block"> excelencia en cada paciente
+            </h2>
+            <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Toda sonrisa en esta galería es el resultado de un plan de tratamiento personalizado y maestría clínica.
+            </p>
+
+            <div class="w-20 h-1.5 mx-auto mt-3 rounded-full bg-[#208884]"></div>
+        </div>
+
+        <div id="galeria-slider" class="splide" aria-label="Galería de fotos del Dr. Albert">
+            
+            <div class="mb-8 text-center min-h-[50px]">
+               <h3 id="titulo-dinamico" class="text-2xl font-bold text-[#208884] transition-all duration-300 tracking-tight bg-white/20 rounded-full">
+                </h3>
+            </div>
+
+            <div class="splide__track rounded-[3rem] shadow-2xl border-[12px] border-white/10">
+                <ul class="splide__list">
+                    {% for foto in info.galeria %}
+                    <li class="splide__slide" data-titulo="{{ foto.titulo }}">
+                        <a href="/static/img/galeria/{{ foto.url }}" 
+                           data-fancybox="gallery" 
+                           data-caption="{{ foto.titulo }}"
+                           class="cursor-zoom-in block group">
+                            <div class="relative aspect-video md:aspect-[16/9] object-cover w-full h-full overflow-hidden">
+                                <div class="absolute inset-0 bg-[#208884]/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
+                                    <i class="fas fa-search-plus text-white text-4xl"></i>
+                                </div>
+                                <img data-src="/static/img/galeria/{{ foto.url }}" 
+                                     src="data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 16 9'%3E%3C/svg%3E"
+                                     alt="{{ foto.titulo }}" 
+                                     class="galeria-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-0 transition-opacity">
+                            </div>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <div class="splide__pagination mt-10"></div>
+        </div>
+        <p class="mt-6 text-center text-white">Click para agrandar</p>
+    </div>
+</section>
+
+<style>
+    /* Personalización de flechas y puntos de Splide para que encajen con la paleta */
+    /* 1. Posicionamos las flechas respecto al track de la imagen */
+    #galeria-slider {
+        position: relative;
+    }
+
+    /* 2. Ajustamos el contenedor de flechas para que ignore el título de arriba */
+    .splide__arrows {
+        position: absolute;
+        top: 60%; /* Lo bajamos al centro */
+        left: 0;
+        right: 0;
+        transform: translateY(-50%); /* Centrado vertical exacto */
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        z-index: 20;
+        pointer-events: none; /* Evita que el contenedor bloquee clicks en la foto */
+    }
+
+    /* 4. Ajuste para móvil: que no se salgan de la pantalla si el contenedor es muy pequeño */
+    @media (max-width: 768px) {
+        .splide__arrow {
+            margin: 0 0.5rem;
+            transform: scale(0.8); /* Flechas un poco más pequeñas en móvil */
+        }
+    }
+    .splide__arrow {
+        background: #FEFFFE !important;
+        opacity: 1 !important;
+        width: 3rem !important;
+        height: 3rem !important;
+        box-shadow: 0 10px 15px -3px rgba(32, 136, 132, 0.2) !important;
+        pointer-events: auto;
+        /* Opcional: Si quieres que sobresalgan un poco de la foto para que se vean mejor */
+        margin: 0 -1.5rem;
+    }
+    .splide__arrow svg {
+        fill: #208884 !important;
+    }
+    .splide__pagination__page {
+        background: #FEFFFE !important;
+        opacity: 0.4;
+    }
+    .splide__pagination__page.is-active {
+        background: #208884 !important;
+        transform: scale(1.4) !important;
+        opacity: 1;
+    }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const galeriaSeccion = document.querySelector('#galeria-slider');
+    const galeriaImgs = document.querySelectorAll('.galeria-img');
+
+    if (galeriaSeccion && galeriaImgs.length > 0) {
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    galeriaImgs.forEach(img => {
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.classList.remove('opacity-0');
+                        }
+                    });
+                    obs.disconnect();
+                }
+            });
+        }, { rootMargin: "300px 0px" });
+
+        observer.observe(galeriaSeccion);
+    }
+
+    const tituloElemento = document.getElementById('titulo-dinamico');
+
+    var splide = new Splide('#galeria-slider', {
+        type        : 'loop',
+        perPage     : 1,
+        autoplay    : true,     
+        interval    : 3000,     // 3 segundos (un poco más lento para que de tiempo de leer)
+        pauseOnHover: true,    
+        pauseOnFocus: false,
+        arrows      : true,     
+        pagination  : true,     
+        drag        : true,     
+        speed       : 800,
+        rewind      : true,
+        role        : '',
+    });
+
+    // Lógica para cambiar el título arriba de la imagen al mover el slide
+    splide.on('mounted move', function () {
+        const slideActivo = splide.Components.Slides.getAt(splide.index);
+        if (slideActivo) {
+            const nuevoTitulo = slideActivo.slide.getAttribute('data-titulo');
+            tituloElemento.style.opacity = 0; // Efecto de desvanecimiento
+            setTimeout(() => {
+                tituloElemento.innerText = nuevoTitulo;
+                tituloElemento.style.opacity = 1;
+            }, 200);
+        }
+    });
+
+    splide.mount();
+
+    // Eliminar atributos ARIA conflictivos que inyecta Splide
+    document.querySelectorAll('#galeria-slider .splide__slide').forEach(function (slide) {
+        slide.removeAttribute('role');
+        slide.removeAttribute('aria-roledescription');
+    });
+
+    // Inicializar Fancybox (Asegúrate de tener los enlaces CDN en tu base.html)
+    Fancybox.bind("[data-fancybox]", {
+        infinite: true,
+        dragToClose: true,
+        Toolbar: {
+            display: {
+                left: ["infobar"],
+                middle: [],
+                right: ["iterateZoom", "close"],
+            },
+        },
+    });
+});
+</script>

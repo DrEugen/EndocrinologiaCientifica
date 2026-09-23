@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Google Tag Manager (Diferido para Máximo Rendimiento Core Web Vitals) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function cargarGTM() {
+      if (window.gtmCargado) return;
+      window.gtmCargado = true;
+
+      window.removeEventListener('scroll', cargarGTM);
+      window.removeEventListener('mousemove', cargarGTM);
+      window.removeEventListener('touchstart', cargarGTM);
+      window.removeEventListener('click', cargarGTM);
+
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-N3PX7VBB');
+    }
+
+    window.addEventListener('scroll', cargarGTM, { passive: true });
+    window.addEventListener('mousemove', cargarGTM, { passive: true });
+    window.addEventListener('touchstart', cargarGTM, { passive: true });
+    window.addEventListener('click', cargarGTM, { passive: true });
+    setTimeout(cargarGTM, 3500);
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{{ info.nombre_negocio }} | Implantes dentales y Rehabilitación{% endblock %}</title>
+
+  <meta name="description"
+    content="{% block description %}Especialista en Implantología y Rehabilitación Oral. Atención profesional de alta calidad en Moravia, San José. ¡Agende su cita hoy!{% endblock %}">
+
+  <link rel="canonical" href="https://igualdental.com{{ request.path }}">
+  <link rel="icon" type="image/x-icon" href="/static/img/favicon.png">
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+  <meta property="og:title"
+    content="{% block og_title %}{{ info.nombre_negocio }} | Implantes dentales en Moravia{% endblock %}">
+  <meta property="og:description"
+    content="{% block og_description %}Clínica odontológica especializada en implantes y rehabilitación oral. Calidad, confianza y tecnología en Moravia, San José.{% endblock %}">
+  <meta property="og:image"
+    content="https://igualdental.com{% block og_image %}/static/img/logo-compartir.webp{% endblock %}">
+  <meta property="og:url" content="https://igualdental.com{{ request.path }}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Igual Dental">
+  <meta property="og:locale" content="es_CR">
+
+  <!-- Metaetiquetas Geográficas para SEO Local -->
+  <meta name="geo.region" content="CR-SJ" />
+  <meta name="geo.placename" content="Moravia, San José" />
+  <meta name="geo.position" content="9.957084;-84.055078" />
+  <meta name="ICBM" content="9.957084, -84.055078" />
+
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+
+  <!-- Archivo generado por Tailwind -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/splide.min.css') }}" media="print"
+    onload="this.media='all'">
+  <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/fancybox.css') }}" media="print"
+    onload="this.media='all'">
+
+  <!-- SCHEMA LD+JSON GLOBAL (GRAFO SEMÁNTICO DOCTOR Y CLÍNICA) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://igualdental.com/#doctor-person",
+          "name": "Dr. Albert Igual",
+          "jobTitle": "Odontólogo, Especialista en Implantología y Rehabilitación Oral",
+          "image": {{ (info.imagen_doctor1 if info and info.imagen_doctor1 else 'https://igualdental.com/static/img/dr_albert_igual_odontologo_e_implantologo.webp') | tojson }},
+          "url": "https://igualdental.com",
+          "telephone": {{ (info.telefono if info and info.telefono else '(506) 8835-2020') | tojson }},
+          "sameAs": [
+            "https://directorio.colegiodentistas.org/es/clinic/clinica-dental-dr-albert-igual",
+            "https://www.facebook.com/dralbertigualodontologo",
+            "https://igualdental.com/blog"
+          ],
+          "knowsAbout": [
+            "Dental Implants",
+            "Implantology",
+            "Oral Rehabilitation",
+            "Prosthodontics",
+            "Cosmetic Dentistry",
+            "Zirconia Crowns"
+          ],
+          "alumniOf": [
+            {
+              "@type": "EducationalOrganization",
+              "name": "Universitat Internacional de Catalunya (Barcelona)"
+            },
+            {
+              "@type": "EducationalOrganization",
+              "name": "ESIRO Barcelona"
+            },
+            {
+              "@type": "EducationalOrganization",
+              "name": "Universidad de Costa Rica (UCR)"
+            }
+          ]
+        },
+        {
+          "@type": ["Dentist", "MedicalClinic"],
+          "@id": "https://igualdental.com/#clinic",
+          "name": "Clínica Dr. Albert Igual - Igual Dental",
+          "image": {{ (info.imagen_doctor1 if info and info.imagen_doctor1 else 'https://igualdental.com/static/img/dr_albert_igual_odontologo_e_implantologo.webp') | tojson }},
+          "url": "https://igualdental.com",
+          "telephone": {{ (info.telefono if info and info.telefono else '(506) 8835-2020') | tojson }},
+          "email": {{ (info.email if info and info.email else 'igualdental@gmail.com') | tojson }},
+          "priceRange": "$$",
+          "description": "Clínica odontológica de alta especialidad en Implantología y Rehabilitación Oral en Moravia, San José. Más de 20 años devolviendo funcionalidad y estética con formación europea y tecnología de vanguardia.",
+          "medicalSpecialty": [
+            "http://schema.org/Dentistry"
+          ],
+          "founder": {
+            "@id": "https://igualdental.com/#doctor-person"
+          },
+          "employee": {
+            "@id": "https://igualdental.com/#doctor-person"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Centro Médico Los Colegios, 25m Sur de Pizza Hut",
+            "addressLocality": "Moravia",
+            "addressRegion": "San José",
+            "addressCountry": "CR"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 9.957084,
+            "longitude": -84.055078
+          },
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "Moravia"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "San José"
+            },
+            {
+              "@type": "Country",
+              "name": "Costa Rica"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+  {% block extra_schema %}{% endblock %}
+
+  <!-- Google tag (gtag.js) - Optimizado para rendimiento Core Web Vitals -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-SBKN5S9E63', { 'transport_type': 'beacon' });
+
+    function cargarAnalytics() {
+      if (window.analyticsCargado) return;
+      window.analyticsCargado = true;
+
+      window.removeEventListener('scroll', cargarAnalytics);
+      window.removeEventListener('mousemove', cargarAnalytics);
+      window.removeEventListener('touchstart', cargarAnalytics);
+
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-SBKN5S9E63";
+      document.head.appendChild(script);
+    }
+
+    window.addEventListener('scroll', cargarAnalytics, { passive: true });
+    window.addEventListener('mousemove', cargarAnalytics, { passive: true });
+    window.addEventListener('touchstart', cargarAnalytics, { passive: true });
+    setTimeout(cargarAnalytics, 4000);
+  </script>
+</head>
+
+<body class="bg-[#208884] text-gray-800">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N3PX7VBB"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <main class="container mx-auto mt-1 p-4">
+    {% block content %}{% endblock %}
+  </main>
+
+  <script defer src="{{ url_for('static', filename='dist/js/splide.min.js') }}"></script>
+  <script defer src="{{ url_for('static', filename='dist/js/fancybox.umd.js') }}"></script>
+</body>
+
+</html>

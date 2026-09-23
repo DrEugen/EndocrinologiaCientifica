@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+
+{% block title %}Dr. Albert Igual | Especialista en Implantología y Rehabilitación Oral{% endblock %}
+{% block description %}Conozca la trayectoria, formación europea y filosofía de trabajo del Dr. Albert Igual, cirujano dentista con más de 23 años de experiencia en Moravia, San José.{% endblock %}
+
+{% block extra_schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://igualdental.com/nosotros#webpage",
+      "url": "https://igualdental.com/nosotros",
+      "name": "Historia, Trayectoria y Credenciales del Dr. Albert Igual",
+      "description": "Trayectoria profesional del Dr. Albert Igual, graduado en Barcelona (UIC y ESIRO) e incorporado a la Universidad de Costa Rica con más de dos décadas de excelencia en implantes dentales.",
+      "mainEntity": {
+        "@id": "https://igualdental.com/#doctor-person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://igualdental.com/#doctor-person",
+      "name": "Dr. Albert Igual",
+      "jobTitle": "Especialista en Implantología y Rehabilitación Oral",
+      "identifier": "478113",
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Licenciatura en Odontología",
+          "recognizedBy": {
+            "@type": "EducationalOrganization",
+            "name": "Universitat Internacional de Catalunya"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Máster en Implantología y Rehabilitación Oral",
+          "recognizedBy": {
+            "@type": "EducationalOrganization",
+            "name": "ESIRO Barcelona"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Incorporación y Colegiatura Profesional",
+          "recognizedBy": {
+            "@type": "EducationalOrganization",
+            "name": "Colegio de Cirujanos Dentistas de Costa Rica / UCR"
+          }
+        }
+      ],
+      "knowsAbout": [
+        "Implantología Oral Avanzada",
+        "Cirugía Guiada de Implantes",
+        "Rehabilitación Oral Completa",
+        "Prótesis en Porcelana y Zirconio",
+        "Estética y Cosmética Dental"
+      ]
+    }
+  ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+    {% include 'componentes/navbar.html' %}
+    {% include 'componentes/whatsapp.html' %}
+
+    <section class="py-20 bg-[#FEFFFE]">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="relative z-10">
+                        <img src="{{ info.imagen_doctor1 }}" class="rounded-[3rem] shadow-2xl w-full aspect-[4/5] object-cover border-8 border-white" alt="Dr. Albert Igual">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border-b-4 border-[#208884] z-20">
+                        <p class="text-[#5BBFA3] font-bold text-[10px] uppercase tracking-[0.2em]">Código Dentista</p>
+                        <p class="text-2xl font-black text-[#208884]">{{ info.perfil_detallado.codigo_medico }}</p>
+                    </div>
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-[#9CDAC8]/20 rounded-full -z-0"></div>
+                </div>
+
+                <div>
+                    <span class="text-[#5BBFA3] font-black uppercase tracking-[0.3em] text-xs">Excelencia y Tradición</span>
+                    <h1 class="text-4xl md:text-5xl font-black text-[#208884] mt-4 mb-6 leading-tight">Dr. Albert Igual</h1>
+                    
+                    <div class="w-16 h-1 bg-[#5BBFA3] mb-8"></div>
+
+                    <p class="text-xl text-slate-700 italic leading-relaxed mb-8 border-l-4 border-[#9CDAC8] pl-6">
+                        "Mi eje principal es el bienestar y satisfacción del paciente, combinando el arte de la prótesis dental con la precisión de la implantología moderna."
+                    </p>
+
+                    <div class="space-y-6 text-slate-600 text-lg leading-relaxed mb-10">
+                        <p>
+                            Con 23 años de experiencia laboral, el Dr. Albert Igual se graduó en la Licenciatura en Odontología en la <strong class="text-slate-900">Universitat Internacional de Catalunya (Barcelona, España)</strong> en 2003. 
+                        </p>
+                        <p>
+                           Posterior a la Licenciatura cursó un <strong class="text-slate-900">Máster en Implantología y Rehabilitación Oral</strong>. De la mano de su padre pudo aprender el arte y la técnica de la confección de prótesis dentales, manteniendo la satisfacción de los pacientes como eje principal de su filosofía de trabajo en San José, Costa Rica.
+                        </p>
+                    </div>
+
+                    <a href="/contactenos" class="inline-block bg-[#208884] hover:bg-[#5BBFA3] text-white font-black py-5 px-10 rounded-2xl shadow-xl shadow-[#208884]/20 transition-all transform hover:-translate-y-1 w-full sm:w-auto text-center uppercase tracking-widest text-sm">
+                        Agendar una valoración
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12">
+                
+                <div class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-100">
+                    <div class="flex items-center gap-4 mb-10">
+                        <div class="w-12 h-12 bg-[#9CDAC8]/20 rounded-xl flex items-center justify-center text-2xl">🎓</div>
+                        <h3 class="text-2xl font-black text-[#208884]">Formación Académica</h3>
+                    </div>
+                    <ul class="space-y-8">
+                        <li class="border-l-4 border-[#5BBFA3] pl-6">
+                            <p class="font-black text-slate-900 uppercase text-xs tracking-wider mb-1">Licenciatura en Odontología</p>
+                            <p class="text-slate-600">Universitat Internacional de Catalunya, Barcelona (2003).</p>
+                        </li>
+                        <li class="border-l-4 border-slate-200 pl-6">
+                            <p class="font-black text-slate-900 uppercase text-xs tracking-wider mb-1">Máster en Implantología</p>
+                            <p class="text-slate-600">Escuela Superior de Implantología, Barcelona (2003-2005).</p>
+                        </li>
+                        <li class="border-l-4 border-slate-200 pl-6">
+                            <p class="font-bold {{ info.estilo.texto_fuerte }}">Equiparación Profesional</p>
+                            <p class="{{ info.estilo.texto_medio }}">Licenciatura en Odontología, Universidad de Costa Rica (UCR).</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-[#208884] p-10 rounded-[2.5rem] text-white shadow-2xl">
+                    <div class="flex items-center gap-4 mb-10">
+                        <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-2xl">🏥</div>
+                        <h3 class="text-2xl font-black">Especialidades</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        {% for afiliacion in info.perfil_detallado.afiliaciones %}
+                        <li class="flex items-center gap-4 bg-white/10 p-4 rounded-2xl border border-white/5">
+                            <span class="text-[#5BBFA3] text-xl font-bold">✓</span>
+                            <span class="font-bold tracking-wide">{{ afiliacion }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="mt-10 p-6 bg-white/10 rounded-2xl">
+                        <p class="text-sm italic opacity-90 text-center">
+                            Aceptamos los principales seguros médicos nacionales e internacionales.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    {% include 'componentes/testimonios.html' %}
+
+    <section class="py-20 bg-[#FEFFFE] border-t border-slate-100">
+        <div class="max-w-3xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-black text-[#208884] mb-6">¿Tiene alguna duda sobre su tratamiento?</h2>
+            <p class="text-slate-600 text-lg mb-10">El Dr. Albert y nuestro equipo están listos para orientarle sobre el protocolo más adecuado según su historia clínica.</p>
+            <div class="flex justify-center">
+                <a href="https://wa.me/{{ info.whatsapp }}" class="bg-[#25D366] hover:bg-[#128C7E] text-white px-10 py-5 rounded-2xl font-black text-lg shadow-2xl transition-all transform hover:scale-105 flex items-center gap-3">
+                    <i class="fab fa-whatsapp text-2xl"></i>
+                    Conversar por WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    {% include 'componentes/footer.html' %}
+{% endblock %}

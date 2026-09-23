@@ -1,0 +1,114 @@
+<nav class="bg-[#208884] backdrop-blur-md border-b border-slate-100 sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 h-20 flex justify-between items-center">
+        <a href="/" class="transition-transform hover:scale-105 duration-300">
+            <picture>
+                <source media="(max-width: 767px)" srcset="/static/img/logo-movil.webp" width="394" height="158">
+                <img src="/static/img/logo.png" alt="Igual Dental Logo" class="h-[90px] w-auto">
+            </picture>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8 font-semibold text-slate-100">
+            <a href="/" class="hover:text-[#FEFFFE] transition-colors text-sm uppercase tracking-wide">Inicio</a>
+            <a href="/nosotros" class="hover:text-[#FEFFFE] transition-colors text-sm uppercase tracking-wide">Sobre
+                mí</a>
+
+            <div class="relative group h-20 flex items-center">
+                <a href="/servicios"
+                    class="flex items-center gap-1 hover:text-[#FEFFFE] transition-colors py-4 text-sm uppercase tracking-wide">
+                    Tratamientos
+                    <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </a>
+
+                <div
+                    class="absolute top-full left-0 w-72 bg-white shadow-2xl rounded-2xl border border-slate-50 py-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-[60]">
+                    <div class="px-6 mb-3 pb-2 border-b border-slate-50">
+                        <span
+                            class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#208884]">Especialidades</span>
+                    </div>
+                    {% for s in info.servicios[:6] %}
+                    <a href="{{ url_for('servicio_detalle', slug=s.slug) }}"
+                        class="block px-6 py-3 text-sm text-[#5BBFA3] hover:bg-slate-50 hover:text-[#208884] transition-all rounded-xl mx-2">
+                        <div class="font-bold">{{ s.titulo }}</div>
+                    </a>
+                    {% endfor %}
+                    <div class="mt-3 pt-3 border-t border-slate-50 px-6">
+                        <a href="/servicios"
+                            class="text-xs font-bold text-[#208884] hover:text-[#208884]/90 transition-colors flex items-center gap-2">
+                            Ver todos los tratamientos <i class="fas fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="/galeria" class="hover:text-[#FEFFFE] transition-colors text-sm uppercase tracking-wide">Galería de
+                sonrisas</a>
+            <a href="/blog" class="hover:text-[#FEFFFE] transition-colors text-sm uppercase tracking-wide">Blog</a>
+            <a href="/en" class="hover:text-[#FEFFFE] transition-colors text-sm uppercase tracking-wide">English</a>
+
+
+            <a href="/contactenos"
+                class="bg-[#5BBFA3] text-white px-6 py-3 rounded-xl shadow-lg shadow-[#208884]/20 hover:bg-[#5BBFA3] hover:shadow-[#5BBFA3]/30 transform hover:-translate-y-0.5 transition-all text-sm uppercase tracking-wider">
+                Contáctenos
+            </a>
+        </div>
+
+        <button id="boton-menu" title="Desplegar menú" class="md:hidden p-2 text-white focus:outline-none">
+            <svg id="icono-abrir" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+            <svg id="icono-cerrar" class="hidden w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+
+    <div id="menu-movil" class="hidden md:hidden border-b border-[#FEFFFE] animate-fade-in-down">
+        <div class="px-4 pt-2 pb-6 space-y-2 bg-[{{ info.estilo.color_secundario }}] shadow-inner">
+            <a href="/"
+                class="block py-3 px-4 font-medium bg-[{{ info.estilo.color_secundario }}]  hover:bg-[{{ info.estilo.color_tema }}] text-white rounded-xl">Inicio</a>
+            <a href="/nosotros"
+                class="block py-3 px-4 font-medium bg-[{{ info.estilo.color_secundario }}]  hover:bg-[{{ info.estilo.color_tema }}] text-white rounded-xl">Sobre
+                mi</a>
+            <a href="/servicios"
+                class="block py-3 px-4 font-medium bg-[{{ info.estilo.color_secundario }}]  hover:bg-[{{ info.estilo.color_tema }}] text-white rounded-xl">Tratamientos</a>
+            <a href="/galeria"
+                class="block py-3 px-4 font-medium bg-[{{ info.estilo.color_secundario }}]  hover:bg-[{{ info.estilo.color_tema }}] text-white rounded-xl">Galeria
+                de sonrisas</a>
+            <a href="/blog"
+                class="block py-3 px-4 font-medium bg-[{{ info.estilo.color_secundario }}]  hover:bg-[{{ info.estilo.color_tema }}] text-white rounded-xl">Blog</a>
+            <a href="/en"
+                class="block py-3 px-4 font-medium  bg-[{{ info.estilo.color_secundario }}] hover:bg-[{{ info.estilo.color_tema }}] text-white rounded-xl">English</a>
+            <a href="/contactenos"
+                class="block py-3 px-4 font-medium bg-[{{ info.estilo.color_complemento }}]  rounded-xl">Contáctenos</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    const btn = document.getElementById('boton-menu');
+    const menu = document.getElementById('menu-movil');
+    const iconoAbrir = document.getElementById('icono-abrir');
+    const iconoCerrar = document.getElementById('icono-cerrar');
+
+    btn.addEventListener('click', () => {
+        // Toggle del menú
+        menu.classList.toggle('hidden');
+
+        // Toggle de los iconos (X vs Hamburguesa)
+        iconoAbrir.classList.toggle('hidden');
+        iconoCerrar.classList.toggle('hidden');
+    });
+
+    // Cerrar menú al hacer click en un link (útil para Single Page o anclas)
+    const links = menu.querySelectorAll('a');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.add('hidden');
+            iconoAbrir.classList.remove('hidden');
+            iconoCerrar.classList.add('hidden');
+        });
+    });
+</script>

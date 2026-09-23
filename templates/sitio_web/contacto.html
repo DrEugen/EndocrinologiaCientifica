@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}Contacto y Citas | Dr. Albert Igual - Moravia{% endblock %}
+{% block description %}Agende su cita de valoración en implantología y rehabilitación oral con el Dr. Albert Igual en Centro Médico Los Colegios, Moravia, San José.{% endblock %}
+
+{% block extra_schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "@id": "https://igualdental.com/contactenos#webpage",
+      "url": "https://igualdental.com/contactenos",
+      "name": "Agende su Cita con el Dr. Albert Igual",
+      "description": "Formulario de contacto y agendamiento de citas para implantes dentales y rehabilitación oral en Moravia, San José.",
+      "mainEntity": {
+        "@id": "https://igualdental.com/#clinic"
+      }
+    }
+  ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+    {% include 'componentes/navbar.html' %}
+    {% include 'componentes/whatsapp.html' %}
+
+    <section class="py-12 bg-{{ info.estilo.bg_debil }}">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-bold {{ info.estilo.texto_fuerte }} mb-4">Reserve su Espacio</h1>
+                <p class="text-lg {{ info.estilo.texto_medio }}">Complete el formulario y daremos el primer paso hacia su salud dental.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                
+                {% include 'componentes/formulario.html' %}
+
+
+                <div class="space-y-8">
+                    <div class="bg-[{{ info.estilo.color_tema }}] rounded-[2.5rem] p-10 text-white shadow-lg">
+                        <div class="flex items-center gap-4 mb-6">
+                            <span class="text-3xl">📝</span>
+                            <h3 class="text-2xl font-bold">Antes de su cita</h3>
+                        </div>
+                        <ul class="space-y-4">
+                            {% for item in info.contacto_detalle.indicaciones_previas %}
+                            <li class="flex items-start gap-3">
+                                <span class="bg-[#9CDAC8] rounded-full p-1 mt-1 text-[10px] text-bold text-[#208884]">✓</span>
+                                <span class="text-[#FEFFFE]">{{ item }}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="bg-white rounded-[2.5rem] p-10 border border-{{ info.estilo.borde_debil_medio }} shadow-sm">
+                        <h4 class="font-bold {{ info.estilo.texto_fuerte }} mb-4">¿Tiene una duda urgente?</h4>
+                        <p class="{{ info.estilo.texto_medio }} mb-6 text-sm">Si necesita asistencia inmediata o desea reprogramar una cita existente, contáctenos directamente:</p>
+                        <div class="space-y-3">
+                            <a href="tel:{{ info.whatsapp }}" class="flex items-center gap-3 text-[{{ info.estilo.color_tema }}] font-bold hover:underline">
+                                📞 {{ info.whatsapp }}
+                            </a>
+                            <a href="https://wa.me/{{ info.whatsapp }}" class="flex items-center gap-3 text-green-600 font-bold hover:underline">
+                                💬 Chat por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div id="confirmacion-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/80 backdrop-blur-sm">
+        <div class="bg-white p-10 rounded-[3rem] max-w-md text-center shadow-2xl mx-4">
+            <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-4xl mx-auto mb-6">
+                ✓
+            </div>
+            <h3 class="text-2xl font-bold {{ info.estilo.texto_fuerte }} mb-4">¡Mensaje Recibido!</h3>
+            <p class="{{ info.estilo.texto_medio }} mb-8">{{ info.contacto_detalle.mensaje_confirmacion }}</p>
+            <button onclick="document.getElementById('confirmacion-modal').classList.add('hidden')" 
+                    class="w-full py-4 bg-{{ info.estilo.bg_fuerte }} text-white rounded-2xl font-bold">
+                Entendido
+            </button>
+        </div>
+    </div>
+
+    {% include 'componentes/ubicacion_y_horarios.html' %}
+    {% include 'componentes/footer.html' %}
+{% endblock %}

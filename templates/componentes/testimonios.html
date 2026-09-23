@@ -1,0 +1,109 @@
+<section id="testimonios" class="{{ info.estilo.testimonios.seccion }}">
+    <div class=" {{ info.estilo.sub_contenedor }} {{ info.estilo.testimonios.contenedor }}">
+        <h3 class="{{ info.estilo.testimonios.titulo }} text-[#208884]">{{ info.testimonios.titulo }}</h3>
+        
+        <div class= '{{ info.estilo.servicios.linea_divisoria }}' style="background-color: {{ info.estilo.color_secundario }}"></div>
+        
+        <div class="relative overflow-hidden">
+            <div id="slider-cinta" class="flex transition-transform duration-500 ease-out">
+                {% for t in info.testimonios.incluye %}
+                <div class="{{ info.estilo.testimonios.card }}">
+                    <div class="{{ info.estilo.testimonios.burbuja }} bg-[{{ info.estilo.color_tema }}]/10 relative">
+                        <p class="{{ info.estilo.testimonios.texto }}">"{{ t.comentario }}"</p>
+                        
+                        <div class="mt-6 flex flex-col items-center">
+                            <div class="w-16 h-16 mb-3 rounded-full border-2 p-1 overflow-hidden" style="border-color: {{ info.estilo.color_tema }}">
+                                <img data-src="/static/img/testimonios/{{ t.foto }}" 
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                                    alt="{{ t.nombre }}" 
+                                    class="testimonio-lazy-img w-full h-full object-cover rounded-full bg-slate-200 opacity-0 transition-opacity duration-300">
+                            </div>
+                            <h4 class="{{ info.estilo.testimonios.autor }}">{{ t.nombre }}</h4>
+                            <p class="{{ info.estilo.testimonios.puesto }}">{{ t.cargo }}</p>
+                        </div>
+
+                        <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 flex bg-white px-3 py-1 rounded-full shadow-sm border border-slate-100 text-yellow-400 text-[18px]">
+                            ★ ★ ★ ★ ★&nbsp;
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+        <div class="{{ info.estilo.testimonios.controles }}">
+            <button onclick="moverSlider(-1)" class="{{ info.estilo.testimonios.boton_slider }} bg-[{{ info.estilo.color_tema }}]/10 hover:bg-[{{ info.estilo.color_tema }}]/20 {{ info.estilo.texto_medio }}">
+                ❮
+            </button>
+            <button onclick="moverSlider(1)" class="{{ info.estilo.testimonios.boton_slider }} bg-[{{ info.estilo.color_tema }}]/10 hover:bg-[{{ info.estilo.color_tema }}]/20 {{ info.estilo.texto_medio }}">
+                ❯
+            </button>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const testimoniosSeccion = document.getElementById('testimonios');
+        const imgs = document.querySelectorAll('.testimonio-lazy-img');
+
+        if (testimoniosSeccion && imgs.length > 0) {
+            const obs = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        imgs.forEach(img => {
+                            if (img.dataset.src) {
+                                img.src = img.dataset.src;
+                                img.classList.remove('opacity-0');
+                            }
+                        });
+                        observer.disconnect();
+                    }
+                });
+            }, { rootMargin: "250px 0px" });
+
+            obs.observe(testimoniosSeccion);
+        }
+    });
+
+    let indexActual = 0;
+    const cinta = document.getElementById('slider-cinta');
+    const cards = cinta.children;
+    const totalCards = cards.length;
+
+    function moverSlider(direccion) {
+        // 1. Detectar cuántas tarjetas se ven según el ancho de pantalla
+        let tarjetasVisibles = 1;
+        if (window.innerWidth >= 1024) tarjetasVisibles = 3; // lg
+        else if (window.innerWidth >= 768) tarjetasVisibles = 2; // md
+
+        // 2. Actualizar el índice
+        indexActual += direccion;
+
+        // 3. Lógica de "loop" infinito corregida
+        // No permitimos que el índice sobrepase el límite de tarjetas que pueden sobrar
+        if (indexActual > totalCards - tarjetasVisibles) {
+            indexActual = 0;
+        }
+        if (indexActual < 0) {
+            indexActual = totalCards - tarjetasVisibles;
+        }
+
+        // 4. Calcular el porcentaje de desplazamiento basado en las tarjetas visibles
+        // En escritorio (3 cards), cada una mide 33.33%
+        const anchoCard = 100 / tarjetasVisibles;
+        const desplazamiento = indexActual * -anchoCard;
+        
+        cinta.style.transform = `translateX(${desplazamiento}%)`;
+    }
+
+    // Ajustar posición si cambian el tamaño de la ventana
+    window.addEventListener('resize', () => {
+        indexActual = 0;
+        cinta.style.transform = `translateX(0%)`;
+    });
+
+    // Auto-play suave
+    setInterval(() => moverSlider(1), 8000);
+</script>

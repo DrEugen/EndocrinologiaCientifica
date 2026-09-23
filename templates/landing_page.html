@@ -1,0 +1,258 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% include 'componentes/hero.html' %}
+    {% include 'componentes/confianza_de.html' %}
+    {% include 'componentes/problema.html' %}
+    {% include 'componentes/beneficios.html' %}
+    {% include 'componentes/autoridad.html' %}
+ 
+    {% include 'componentes/testimonios.html' %}
+    <!--{% include 'componentes/galeria.html' %}
+        INCLUIR LA GALERIA SOLO CUANDO TENGA SUFICIENTES FOTOS REALES DE IMPLANTES DENTALES
+    -->
+    <section class="relative pt-16 pb-20 bg-[#208884] overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="text-[#9CDAC8] font-black tracking-[0.3em] uppercase text-xs mb-4 block">
+                        {{ contenido.servicio.tecnicismo_principal }}
+                    </span>
+                    <h1 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+                        {{ contenido.servicio.titulo }}
+                    </h1>
+                    <p class="text-white/90 text-xl mb-8 leading-relaxed">
+                        {{ contenido.servicio.descripcion_corta }}
+                    </p>
+                    
+                    <div class="mb-10 text-[#FEFFFE]/80 border-l-4 border-[#5BBFA3] pl-6 py-2 leading-relaxed italic text-lg bg-white/5 rounded-r-2xl">
+                        {{ contenido.servicio.educacion_tecnica | safe }}
+                    </div>
+
+                    <div class="flex gap-4">
+                        <a href="https://wa.me/{{ info.whatsapp }}" class="bg-[#5BBFA3] text-white px-10 py-5 rounded-2xl font-black hover:bg-[#FEFFFE] hover:text-[#208884] transition-all shadow-2xl shadow-black/20 uppercase text-sm tracking-widest">
+                            Agendar Valoración
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="relative group">
+                    <div class="absolute -inset-4 bg-white/10 rounded-[3.5rem] blur-2xl group-hover:bg-[#5BBFA3]/20 transition-all"></div>
+                    <div class="relative rounded-[3rem] overflow-hidden shadow-2xl border-[12px] border-white/10">
+                        {% if contenido.servicio.imagen.startswith('http') %}
+                            <img src="{{ contenido.servicio.imagen }}" alt="{{ contenido.servicio.titulo }}" class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-110">
+                        {% else %}
+                            <img src="/static/img/servicios/{{ contenido.servicio.imagen }}" alt="{{ contenido.servicio.titulo }}" class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-110">
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-[#FEFFFE]">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid lg:grid-cols-3 gap-12 items-start">
+                
+                <div class="lg:col-span-1">
+                    <h2 class="text-4xl font-black text-[#208884] leading-tight mb-4">Ventajas Clínicas</h2>
+                    <p class="text-slate-500 text-lg">¿Por qué este procedimiento es la opción ideal para usted?</p>
+                    <div class="w-20 h-2 bg-[#5BBFA3] mt-6"></div>
+                </div>
+
+                <div class="lg:col-span-2">
+                    <div class="bg-slate-50 rounded-[3rem] p-8 md:p-12 border border-slate-100 shadow-sm">
+                        <div class="grid md:grid-cols-2 gap-x-12 gap-y-10">
+                            {% for beneficio in contenido.servicio.beneficios_detallados %}
+                            <div class="flex gap-4">
+                                <div class="shrink-0 w-10 h-10 rounded-full bg-[#5BBFA3] flex items-center justify-center text-white font-bold">
+                                    ✓
+                                </div>
+                                <div>
+                                    <h4 class="font-black text-slate-900 text-lg mb-2 uppercase tracking-tight">{{ beneficio.titulo }}</h4>
+                                    <p class="text-slate-600 leading-relaxed text-sm">
+                                        {{ beneficio.descripcion }}
+                                    </p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-[#9CDAC8]/10">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-[#5BBFA3] font-black uppercase tracking-widest text-xs">Paso a paso</span>
+                <h2 class="text-4xl font-black text-white mt-4">Protocolo de Intervención</h2>
+            </div>
+            
+            <div class="space-y-6">
+                {% for etapa in contenido.servicio.procedimiento %}
+                <div class="flex flex-col md:flex-row gap-6 bg-white p-8 rounded-[2.5rem] shadow-sm border border-white hover:border-[#5BBFA3] transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-[#208884] flex items-center justify-center font-black text-white text-2xl shrink-0">
+                        0{{ loop.index }}
+                    </div>
+                    <div>
+                        <h4 class="font-black text-[#208884] text-xl mb-2">{{ etapa.paso }}</h4>
+                        <p class="text-slate-600 leading-relaxed">{{ etapa.desc }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-[#FEFFFE]">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="flex flex-wrap justify-center gap-8">
+                
+                <div class="w-full md:max-w-md p-12 rounded-[3rem] bg-[#208884] text-white shadow-2xl">
+                    <h3 class="text-2xl font-black mb-6 flex items-center gap-3">
+                        <span class="text-[#9CDAC8]">✚</span> Post-Tratamiento
+                    </h3>
+                    <p class="text-white/80 leading-relaxed text-lg">{{ contenido.servicio.recuperacion }}</p>
+                </div>
+
+                <div class="w-full md:max-w-md p-12 rounded-[3rem] bg-[#5BBFA3] text-white flex flex-col justify-center">
+                    <h3 class="text-2xl font-black mb-2 tracking-tight">Cronograma Estimado</h3>
+                    <p class="text-3xl font-black mb-6">{{ contenido.servicio.duracion }}</p>
+                    <p class="text-white/70 italic text-sm border-t border-white/20 pt-4 uppercase tracking-widest">
+                        *Sujeto a evaluación clínica
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    {% include 'componentes/oferta.html' %}
+
+    <section class="py-20 bg-[#208884]">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            
+            <h2 class="text-white {{ info.estilo.h2 }} mt-4">
+                El compromiso con su nueva vida comienza con un solo paso seguro
+            </h2>
+            <p class="text-xl text-slate-200 {{ info.estilo.p }}">
+                Active Hoy su Nueva Identidad. Recupere su Libertad Personal de la mano de un Arquitecto de Sonrisas especializado en Europa. 
+                Agenda una consulta de valoración para tu caso específico sin ninguna obligación de empezar el procedimiento.
+            </p>
+            
+            <div class="inline-block p-4 mt-6 bg-white/20 border border-white rounded-xl">
+                <p class="text-white font-medium">
+                    <span class="{{ info.estilo.pre_titulo }}">Viva relajado sin tener que preocuparse de que pensarán los demás cuando sonríe o limitando lo que hace por algo que tiene solución confiable.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="py-10"></div>
+    {% include 'componentes/formulario.html' %}
+    <div class="py-10"></div>
+
+    <!--PREGUNTAS FRECUENTES-->
+    <div class="max-w-3xl mx-auto px-6 py-8">
+        <h2 class="text-3xl font-bold text-[#FEFFFE] text-center mb-12">Preguntas Frecuentes</h2>
+        <div class="space-y-4">
+            {% for faq in contenido.faqs %}
+            <div class="bg-white rounded-xl border border-slate-200 overflow-hidden">
+                <details class="group">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none font-bold text-slate-700 hover:text-[{{info.estilo.color_tema}}]">
+                        {{ faq.pregunta }}
+                        <span class="transition group-open:rotate-180 text-[{{info.estilo.color_tema}}]">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="p-6 pt-0 text-slate-500 border-t border-white/5">
+                        {{ faq.respuesta }}
+                    </div>
+                </details>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="py-4"></div>
+    </div>
+
+    {% include 'componentes/ubicacion_y_horarios.html' %}
+    <footer class="bg-slate-900 text-white pt-20 pb-10">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+            
+            <div class="col-span-1 md:col-span-1">
+                <img src="/static/img/logo.png" alt="Logo" class="h-[90px] w-auto mb-6">
+                <div class="mt-8">
+                    <h4 class="font-bold mb-4 uppercase text-[10px] tracking-[0.2em] text-[#5BBFA3]">Clínica Dr. Albert Igual</h4>
+                    <p class="text-xs text-slate-500 mb-4">Comprometidos con la calidad y el trato humano.</p>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-bold mb-6 uppercase text-xs tracking-[0.2em] text-[#5BBFA3]">Contacto Directo</h4>
+                <ul class="space-y-4 text-sm text-slate-400">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-phone text-[#5BBFA3] mt-1"></i>
+                        <span>{{ info.telefono }}</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-envelope text-[#5BBFA3] mt-1"></i>
+                        <span>{{ info.email }}</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-[#5BBFA3] mt-1"></i>
+                        <span>{{ info.ubicación }}</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold mb-6 uppercase text-xs tracking-[0.2em] text-[#5BBFA3]">Horarios</h4>
+                <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
+                    <p class="text-xs text-slate-400 mb-2 flex justify-between"><span>Lunes a Viernes:</span> <span class="text-white">8:00 - 19:00</span></p>
+                    <p class="text-xs text-slate-400 flex justify-between"><span>Sábados:</span> <span class="text-white">Previa cita</span></p>
+                </div>
+                <div class="flex gap-4 mt-6">
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/reel/C53dziOLpXD/" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#5BBFA3] transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-white" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/dralbertigualodontologo" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#5BBFA3] transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-white" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-6 border-t border-white/10 mt-20 pt-8 flex flex-col md:row justify-between items-center gap-6">
+            <div class="text-[10px] uppercase tracking-widest text-slate-500 text-center md:text-left">
+                &copy; 2026 {{ info.nombre_negocio }}. <span class="mx-2">|</span> 
+                <a href="/legal/privacidad" class="hover:text-white">Políticas de Privacidad</a> <span class="mx-2">•</span> 
+                <a href="/legal/terminos" class="hover:text-white">Términos y condiciones</a>
+            </div>
+            
+            <div class="text-[11px] font-medium text-slate-500">
+                Diseño por <a href="https://exponencialmedia.lat/" target="_blank" class="text-[#5BBFA3] hover:text-[#208884] transition-colors font-bold">Exponencial Media</a>
+            </div>
+        </div>
+        <div id="toast-container" class="fixed bottom-6 right-6 z-50 transform transition-all duration-500 translate-y-20 opacity-0">
+            <div class="bg-[#208884] text-white px-8 py-4 rounded-2xl shadow-2xl flex items-center gap-4">
+                <span class="text-xl">✅</span>
+                <div>
+                    <p class="font-black text-sm uppercase tracking-widest">Suscripción exitosa</p>
+                    <p class="text-white/80 text-[10px] font-bold uppercase tracking-widest">Gracias por unirse a nuestra comunidad.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    {% include 'componentes/whatsapp.html' %}
+
+{% endblock %}

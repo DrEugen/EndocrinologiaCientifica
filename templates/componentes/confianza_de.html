@@ -1,0 +1,112 @@
+<section class="{{ info.estilo.confianza.seccion_principal }} py-12 overflow-hidden bg-white">
+    <div class='{{  info.estilo.servicios.div_encabezado }}'>
+        <h2 class='text-3xl font-bold text-[#208884]'>Con la confianza de:</h2>
+        <div class='{{ info.estilo.servicios.linea_divisoria }}'
+            style="background-color: {{ info.estilo.color_secundario }}"></div>
+    </div>
+    <div
+        class="relative flex overflow-hidden before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-20 before:bg-gradient-to-r before:from-white before:to-transparent after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-20 after:bg-gradient-to-l after:after:from-white after:to-transparent">
+
+        <div class="flex animate-infinite-scroll space-x-16 items-center">
+            <!-- Grupo 1 -->
+            <img data-src="{{ url_for('static', filename='img/logos/universitat_internacional_de_catalunya.webp') }}"
+                src="data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                alt="Universitat Internacional de Catalunya"
+                class="logo-lazy h-12 w-auto grayscale opacity-0 transition-opacity duration-300">
+            <img data-src="{{ url_for('static', filename='img/logos/escuela_superior_de_implantologia_barcelona.webp') }}"
+                src="data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                alt="Escuela Superior de Implantología Barcelona"
+                class="logo-lazy h-12 w-auto grayscale opacity-0 transition-opacity duration-300">
+            <img data-src="{{ url_for('static', filename='img/logos/universidad_de_costa_rica.webp') }}"
+                src="data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                alt="Universidad de Costa Rica"
+                class="logo-lazy h-12 w-auto grayscale opacity-0 transition-opacity duration-300">
+            <img data-src="{{ url_for('static', filename='img/logos/colegio-de-dentistas-de-costa-rica.webp') }}"
+                src="data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                alt="Colegio de Dentistas de Costa Rica"
+                class="logo-lazy h-12 w-auto opacity-0 transition-opacity duration-300">
+
+            <!-- Grupo 2 -->
+            <img data-src="{{ url_for('static', filename='img/logos/universitat_internacional_de_catalunya.webp') }}"
+                src="data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                alt="Universitat Internacional de Catalunya"
+                class="logo-lazy h-12 w-auto grayscale opacity-0 transition-opacity duration-300">
+            <img data-src="{{ url_for('static', filename='img/logos/escuela_superior_de_implantologia_barcelona.webp') }}"
+                src="data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                alt="Escuela Superior de Implantología Barcelona"
+                class="logo-lazy h-12 w-auto grayscale opacity-0 transition-opacity duration-300">
+            <img data-src="{{ url_for('static', filename='img/logos/universidad_de_costa_rica.webp') }}"
+                src="data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                alt="Universidad de Costa Rica"
+                class="logo-lazy h-12 w-auto grayscale opacity-0 transition-opacity duration-300">
+            <img data-src="{{ url_for('static', filename='img/logos/colegio-de-dentistas-de-costa-rica.webp') }}"
+                src="data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                alt="Colegio de Dentistas de Costa Rica"
+                class="logo-lazy h-12 w-auto grayscale opacity-0 transition-opacity duration-300">
+
+            <!-- Grupo 3 -->
+            <img data-src="{{ url_for('static', filename='img/logos/universitat_internacional_de_catalunya.webp') }}"
+                src="data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                alt="Universitat Internacional de Catalunya"
+                class="logo-lazy h-12 w-auto grayscale opacity-0 transition-opacity duration-300">
+            <img data-src="{{ url_for('static', filename='img/logos/escuela_superior_de_implantologia_barcelona.webp') }}"
+                src="data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                alt="Escuela Superior de Implantología Barcelona"
+                class="logo-lazy h-12 w-auto grayscale opacity-0 transition-opacity duration-300">
+            <img data-src="{{ url_for('static', filename='img/logos/universidad_de_costa_rica.webp') }}"
+                src="data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                alt="Universidad de Costa Rica"
+                class="logo-lazy h-12 w-auto grayscale opacity-0 transition-opacity duration-300">
+            <img data-src="{{ url_for('static', filename='img/logos/colegio-de-dentistas-de-costa-rica.webp') }}"
+                src="data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                alt="Colegio de Dentistas de Costa Rica"
+                class="logo-lazy h-12 w-auto grayscale opacity-0 transition-opacity duration-300">
+        </div>
+    </div>
+</section>
+
+<style>
+    @keyframes infinite-scroll {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-99%);
+        }
+
+        /* Se mueve la mitad porque duplicamos los logos */
+    }
+
+    .animate-infinite-scroll {
+        animation: infinite-scroll 25s linear infinite;
+        display: flex;
+        width: max-content;
+    }
+
+    /* Pausar cuando el usuario pone el mouse encima */
+    .animate-infinite-scroll:hover {
+        animation-play-state: paused;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const logos = document.querySelectorAll('.logo-lazy');
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('opacity-0');
+                    observer.unobserve(img);
+                }
+            });
+        }, {
+            rootMargin: "0px 0px 150px 0px"
+        });
+
+        logos.forEach(logo => observer.observe(logo));
+    });
+</script>

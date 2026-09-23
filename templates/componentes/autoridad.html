@@ -1,0 +1,102 @@
+<section id='nosotros' class="{{ info.estilo.autoridad.seccion }} bg-[#5BBFA3]">
+    <div class="{{ info.estilo.sub_contenedor }}">
+        <div class="{{ info.estilo.autoridad.grid }}">
+            
+            <div class="order-2 lg:order-1">
+                <div class="{{ info.estilo.autoridad.foto_contenedor }} border-8 border-[#FEFFFE] shadow-2xl">
+                    <img data-src="{{ info.imagen_doctor1 }}" 
+                         src="data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 4 5'%3E%3C/svg%3E"
+                         alt="{{ info.nombre }}" 
+                         class="autoridad-lazy-img w-full h-[500px] object-cover opacity-0 transition-opacity duration-300">
+                </div>
+            </div>
+
+            <div class="order-1 lg:order-2">
+                <span class="text-[#208884] font-black tracking-[0.2em] uppercase text-xs"> 
+                    {{ info.autoridad.pretitulo }} 
+                </span>
+
+                <h2 class="{{ info.estilo.autoridad.titulo }} text-white font-black">
+                    {{ info.autoridad.titulo }}
+                </h2>
+
+                <p class="text-lg text-white/90 leading-relaxed mb-8">
+                    El {{ info.nombre }} {{ info.autoridad.descripcion }}
+                </p>
+
+                <div class="{{ info.estilo.autoridad.stats_grid }}">
+                    <div class="p-6 rounded-2xl bg-[#FEFFFE] border-b-4 border-[#208884] shadow-xl">
+                        <span class="block text-2xl font-black text-[#208884] md:text-3xl">{{ info.autoridad.experiencia }}</span>
+                        <span class="text-[10px] uppercase font-bold tracking-widest text-slate-500"> 
+                            {{ info.autoridad.card1_subtitulo }} 
+                        </span>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-[#FEFFFE] border-b-4 border-[#208884] shadow-xl">
+                        <span class="block text-2xl font-black text-[#208884] md:text-3xl">{{ info.autoridad.pacientes }}</span>
+                        <span class="text-[10px] uppercase font-bold tracking-widest text-slate-500"> 
+                            {{ info.autoridad.card2_subtitulo }} 
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-24 bg-[#FEFFFE] text-slate-800">
+    <div class="{{ info.estilo.sub_contenedor }}">
+        <div class="{{ info.estilo.beneficios.grid }}">
+            
+            <div>
+                <h2 class="text-4xl font-black mb-6 text-[#208884]">
+                    {{ info.beneficios.titulo}}
+                </h2>
+
+                <p class="text-slate-600 text-lg mb-10 leading-relaxed">
+                    {{ info.beneficios.descripcion | safe}}
+                </p>
+
+                <a href="#contacto" class='bg-[#208884] hover:bg-[#5BBFA3] text-white shadow-lg shadow-[#208884]/20 transition-all {{ info.estilo.boton_primario }}'>
+                    Agendar mi Valoración Hoy
+                </a>
+            </div>
+
+            <div class="{{ info.estilo.beneficios.lista }}">
+                {% for beneficio in info.beneficios.incluye %}
+                <div class="flex items-center gap-4 p-4 rounded-xl hover:bg-[#5BBFA3]/5 transition-colors border-b border-slate-50 last:border-0">
+                    <div class="w-8 h-8 rounded-full bg-[#5BBFA3] flex items-center justify-center flex-shrink-0">
+                        <span class="text-white text-sm">✓</span>
+                    </div>
+                    <span class="text-slate-700 font-medium">{{ beneficio | safe}}</span>
+                </div> 
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const autoridadSeccion = document.getElementById('nosotros');
+        const img = document.querySelector('.autoridad-lazy-img');
+
+        if (autoridadSeccion && img) {
+            const obs = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.classList.remove('opacity-0');
+                        }
+                        observer.disconnect();
+                    }
+                });
+            }, { rootMargin: "200px 0px" });
+
+            obs.observe(autoridadSeccion);
+        }
+    });
+</script>

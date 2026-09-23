@@ -1,0 +1,43 @@
+<section>
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <span class="bg-[#5BBFA3] text-white font-bold tracking-widest uppercase text-xs px-3 py-1 rounded-lg">
+                {{ contenido.hero.pretitulo}}
+            </span>
+                
+            <h1 class="text-3xl font-bold text-white mt-6 mb-6 leading-tight">
+                {{ contenido.hero.titulo | safe}}
+            </h1>
+                
+            <p class="text-lg text-[#FEFFFE]/90 mb-8 leading-relaxed">
+                {{ contenido.hero.subtitulo | safe }}
+            </p>
+                
+            <div class="flex flex-wrap gap-4">
+                <a href="#contacto" 
+                class="bg-[#FEFFFE] text-[#208884] hover:bg-[#9CDAC8] transition-all px-8 py-4 rounded-2xl font-bold shadow-xl">
+                    ¡Agendar Valoración hoy!
+                </a>
+            </div>
+                
+            <div class="py-6 flex items-center gap-3">
+                <span class="w-8 h-[1px] bg-[#5BBFA3]"></span>
+                <span class="italic text-[#FEFFFE]/80 text-xs font-medium">
+                    "100% recomendado una excelente atención y sus trabajos son los mejores."
+                </span> 
+                <span class="text-[#9CDAC8] font-bold text-xs">— Ede Angulo</span>
+            </div>
+        </div>
+        
+
+        <div class="relative">
+            <img src="{{ contenido.hero.imagen }}" 
+                class="rounded-[2rem] shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500 border-8 border-white" 
+                alt="Consultorio">
+                
+            <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-[#5BBFA3] rounded-full -z-10 opacity-50"></div>
+        </div>
+        <div class="py-4 md:py-0"></div>
+        
+    </div>
+</section>
