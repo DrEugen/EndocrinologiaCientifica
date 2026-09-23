@@ -1,5 +1,5 @@
-# Die Orden
+# Endocrinología Científica
 > ...
-Europäischer heidnischer Ritterorden
+Consultorio de Endocrinología Científica. Atención interdisciplinaria, protocolos científicos avanzados.
 ## Documentación
-    - [Die Orden](grossmeisteriii.github.io/DieOrden/): Europäischer heidnischer Ritterorden
+    - [Endocrinología Científica](https://dreugen.github.io/EndocrinologiaCientifica/): Endocrinología Científica
