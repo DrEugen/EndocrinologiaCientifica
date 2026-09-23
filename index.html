@@ -44,20 +44,43 @@
       --shadow: 0 12px 28px rgba(17,17,17,0.08);
     }
 
+<style>
+    :root{
+      --bg: #f6f3f1;
+      --panel: #ffffff;
+      --panel-soft: #f2efee;
+      --text: #111111;
+      --muted: #4d4d4d;
+      --line: #d9d2ce;
+      --accent: #7d1f1f;
+      --accent-dark: #631717;
+      --shadow: 0 14px 30px rgba(17,17,17,0.08);
+    }
+
     * { box-sizing: border-box; }
+
     html { scroll-behavior: smooth; }
+
     body{
-      margin:0;
+      margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height:1.6;
+      line-height: 1.6;
     }
-    a{ color: inherit; text-decoration: none; }
-    img{ max-width:100%; display:block; }
+
+    a{
+      color: inherit;
+      text-decoration: none;
+    }
+
+    h1, h2, h3, p{
+      margin-top: 0;
+    }
+
     .container{
-      width:min(1180px, 92%);
-      margin:0 auto;
+      width: min(1180px, 92%);
+      margin: 0 auto;
     }
 
     .topbar{
@@ -69,17 +92,18 @@
     }
 
     .topbar-inner{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      min-height:76px;
-      gap:20px;
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
     }
 
     .brand{
-      font-size: clamp(1.1rem, 2vw, 1.8rem);
-      font-weight: 700;
-      letter-spacing: 0.02em;
+      font-size: clamp(1.5rem, 2vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
     }
 
     .brand span{
@@ -87,92 +111,96 @@
     }
 
     .contact{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight:700;
-      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
       white-space: nowrap;
+      font-size: 1.1rem;
     }
 
     .contact-badge{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
       background: var(--accent);
-      color:#fff;
-      width:28px;
-      height:28px;
-      border-radius:50%;
-      font-size:0.8rem;
-      font-weight:700;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
     }
 
     .hero{
       background: var(--panel);
-      padding: 80px 0 60px;
-      border-bottom:1px solid var(--line);
+      padding: 70px 0 50px;
+      border-bottom: 1px solid var(--line);
     }
 
     .hero-grid{
-      display:grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap:40px;
-      align-items:center;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 34px;
+      align-items: center;
     }
 
     .eyebrow{
-      display:inline-block;
-      padding:8px 14px;
-      border:1px solid var(--accent);
+      display: inline-block;
+      padding: 9px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
       color: var(--accent);
-      background: rgba(125,31,31,0.05);
-      font-size:0.72rem;
-      font-weight:700;
-      letter-spacing:0.08em;
+      background: rgba(125,31,31,0.04);
       text-transform: uppercase;
-      border-radius:999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      margin-bottom: 18px;
     }
 
     h1{
-      font-size: clamp(2.5rem, 4vw, 4.5rem);
-      line-height:1.05;
-      margin: 18px 0 20px;
-      font-weight: 800;
-      letter-spacing: -0.04em;
+      font-size: clamp(2.8rem, 4vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      margin-bottom: 20px;
     }
 
     .hero p{
-      font-size: 1.08rem;
       color: var(--muted);
-      max-width: 620px;
-      margin:0 0 28px;
+      font-size: 1.08rem;
+      max-width: 700px;
+      margin-bottom: 28px;
     }
 
-    .actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      margin-bottom: 22px;
+    .hero-actions{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
     }
 
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:52px;
-      padding: 0 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 26px;
       border-radius: 999px;
-      border:1px solid var(--text);
-      font-weight:700;
-      transition: .2s ease;
-      cursor:pointer;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 1px solid var(--text);
+      cursor: pointer;
+    }
+
+    .btn:hover{
+      transform: translateY(-1px);
     }
 
     .btn-primary{
       background: var(--accent);
-      color:#fff;
+      color: #fff;
       border-color: var(--accent);
+      box-shadow: 0 10px 24px rgba(125,31,31,0.18);
     }
 
     .btn-secondary{
@@ -181,264 +209,274 @@
       border-color: var(--text);
     }
 
-    .btn:hover{
-      transform: translateY(-1px);
-    }
-
     .hero-card{
-      background: linear-gradient(180deg, #faf7f6, #f0ecea);
-      border:1px solid var(--line);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      padding: 26px;
       min-height: 360px;
-      display:flex;
-      align-items:flex-end;
-      justify-content:center;
+      background: linear-gradient(180deg, #faf8f7, #f0ecea);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 26px;
     }
 
     .mock-box{
-      width:100%;
+      width: 100%;
       min-height: 300px;
-      border:1px solid var(--line);
-      border-radius: 18px;
-      background: linear-gradient(135deg, #ffffff, #f1e9e7);
-      display:grid;
-      place-items:center;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #ffffff, #f3ece9);
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      text-align: center;
       color: var(--accent);
-      font-size: 1.1rem;
+      font-size: clamp(1.4rem, 2vw, 2.1rem);
       font-weight: 700;
-      text-align:center;
-      padding:30px;
+      line-height: 1.2;
+      padding: 32px;
     }
 
     section{
-      padding: 80px 0;
+      padding: 84px 0;
     }
 
     .section-head{
       margin-bottom: 34px;
-      text-align:center;
+      text-align: center;
     }
+
     .section-head h2{
-      font-size: clamp(2rem, 3vw, 3rem);
-      margin:0 0 12px;
-      letter-spacing:-0.03em;
+      font-size: clamp(2rem, 2.7vw, 3.2rem);
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
     }
+
     .section-head p{
-      margin:0 auto;
-      max-width: 700px;
+      max-width: 820px;
+      margin: 0 auto;
       color: var(--muted);
-      font-size: 1.02rem;
+      font-size: 1.04rem;
+    }
+
+    .services-grid{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card{
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 22px 18px;
+    }
+
+    .service-card h3{
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .service-card p{
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.98rem;
+    }
+
+    .why{
+      background: var(--panel);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
     .why-grid{
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap:20px;
-    }
-
-    .info-card{
-      background: var(--panel);
-      border:1px solid var(--line);
-      border-radius: 18px;
-      padding: 28px 22px;
-      box-shadow: var(--shadow);
-    }
-
-    .info-card .number{
-      font-size:2.2rem;
-      font-weight:800;
-      color: var(--accent);
-      margin-bottom:10px;
-      display:block;
-    }
-
-    .info-card h3{
-      font-size:1.25rem;
-      margin:0 0 8px;
-    }
-
-    .info-card p{
-      margin:0;
-      color: var(--muted);
-      font-size:0.98rem;
-    }
-
-    .quality{
-      background: var(--panel);
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-    }
-
-    .quality-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:30px;
-      align-items:center;
-    }
-
-    .text-block{
-      background: var(--panel-soft);
-      border:1px solid var(--line);
-      border-radius: 22px;
-      padding: 34px 28px;
-    }
-
-    .text-block h3{
-      font-size: clamp(1.8rem, 2.5vw, 2.6rem);
-      margin:0 0 16px;
-      letter-spacing:-0.04em;
-    }
-
-    .text-block p{
-      color: var(--muted);
-      margin:0;
-      font-size:1.02rem;
-    }
-
-    .quality-box{
-      min-height: 320px;
-      border:1px solid var(--line);
-      border-radius: 24px;
-      background: linear-gradient(180deg, #f8f4f3, #efeae8);
-      display:grid;
-      place-items:center;
-      font-weight:700;
-      color: var(--accent);
-      text-align:center;
-      padding:26px;
-    }
-
-    .cases{
-      background: var(--panel);
-    }
-
-    .cases-grid{
-      display:grid;
+      display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap:22px;
+      gap: 18px;
     }
 
-    .case-card{
+    .why-box{
       background: var(--panel-soft);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:26px 22px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 26px 22px;
     }
 
-    .case-card h3{
-      margin:0 0 10px;
-      font-size:1.22rem;
+    .why-box h3{
+      font-size: 1.35rem;
+      margin-bottom: 10px;
     }
 
-    .case-card p{
-      margin:0;
+    .why-box p{
+      margin: 0;
       color: var(--muted);
     }
 
-    .security{
-      background: var(--panel-soft);
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
+    .feature-list{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 10px;
     }
 
-    .security-box{
-      max-width: 980px;
-      margin: 0 auto;
+    .feature{
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px 18px;
+    }
+
+    .feature h3{
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .feature p{
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .interdisciplinary{
       background: var(--panel);
-      border:1px solid var(--line);
-      border-radius: 22px;
-      padding: 36px 30px;
-      box-shadow: var(--shadow);
     }
 
-    .security-box h3{
-      margin:0 0 16px;
-      font-size: clamp(1.7rem, 2.7vw, 2.5rem);
-      letter-spacing:-0.03em;
+    .inter-grid{
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: start;
     }
 
-    .security-box p{
-      margin:0;
+    .info-box{
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 26px;
+    }
+
+    .info-box h3{
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .info-box p{
       color: var(--muted);
-      font-size:1.02rem;
+      margin: 0;
     }
 
-    .cta{
-      padding: 90px 0;
+    .specialists{
+      display: grid;
+      gap: 14px;
+    }
+
+    .specialist{
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px 20px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .countries{
+      background: var(--panel-soft);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .country-list{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .country{
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .cta-wrap{
       background: var(--panel);
     }
 
     .cta-box{
-      text-align:center;
-      background: linear-gradient(180deg, #faf7f6, #f2efee);
-      border:1px solid var(--line);
+      background: linear-gradient(180deg, #faf8f7, #f2efee);
+      border: 1px solid var(--line);
       border-radius: 26px;
-      padding: 60px 28px;
       box-shadow: var(--shadow);
+      text-align: center;
+      padding: 52px 28px;
     }
 
     .cta-box h2{
       font-size: clamp(2rem, 3vw, 3rem);
-      margin: 0 0 16px;
-      letter-spacing:-0.04em;
+      letter-spacing: -0.04em;
+      margin-bottom: 14px;
     }
 
     .cta-box p{
       max-width: 720px;
       margin: 0 auto 26px;
       color: var(--muted);
-      font-size:1.03rem;
     }
 
     .footer{
       background: #111111;
       color: #f5f5f5;
-      padding: 32px 0;
+      padding: 30px 0;
     }
 
     .footer-inner{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:18px;
-      flex-wrap:wrap;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
     .footer small{
-      opacity:0.8;
+      opacity: 0.85;
     }
 
     @media (max-width: 900px){
       .hero-grid,
-      .quality-grid,
-      .cases-grid{
+      .inter-grid,
+      .services-grid{
         grid-template-columns: 1fr;
       }
-      .why-grid{
-        grid-template-columns: repeat(2, 1fr);
+
+      .why-grid,
+      .feature-list{
+        grid-template-columns: 1fr;
+      }
+
+      .topbar-inner{
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 18px 0;
+      }
+
+      .contact{
+        white-space: normal;
       }
     }
 
     @media (max-width: 620px){
-      .topbar-inner{
-        flex-direction:column;
-        justify-content:center;
-        align-items:flex-start;
-        padding:18px 0;
+      .hero-actions{
+        flex-direction: column;
       }
-      .contact{
-        white-space: normal;
-      }
-      .why-grid{
-        grid-template-columns: 1fr;
-      }
+
       .btn{
-        width:100%;
-      }
-      .actions{
-        flex-direction:column;
+        width: 100%;
       }
     }
   </style>
@@ -453,7 +491,7 @@
 
       <div class="contact">
         <span class="contact-badge">T</span>
-        <a href="https://t.me/MetaenGuerra" target="_blank" rel="noopener">T.me/MetaenGuerra</a>
+        <a href="https://t.me/MetaenGuerra1" target="_blank" rel="noopener">T.me/MetaenGuerra1</a>
       </div>
     </div>
   </header>
@@ -463,23 +501,26 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Especialistas en salud hormonal</span>
-          <h1>Mejoramos tu salud desde la raíz del equilibrio endocrino.</h1>
+          <div class="eyebrow">Especialistas en salud hormonal</div>
+
+          <h1>Consultorio de Endocrinología Científica</h1>
+
           <p>
-            En Consultorio de Endocrinología Científica trabajamos con un enfoque clínico,
-            moderno y personalizado para ayudar a pacientes con alteraciones hormonales,
-            metabolismo, tiroides, energía, peso y bienestar integral.
+            En el consultorio se ofrecen protocolos de atención científica, técnica y personalizada
+            para pacientes que requieren orientación endocrinológica con criterio moderno, riguroso
+            y orientado a la mejor evidencia disponible.
           </p>
 
-          <div class="actions">
-            <a href="https://t.me/MetaenGuerra" target="_blank" rel="noopener" class="btn btn-primary">Contactar por Telegram</a>
+          <div class="hero-actions">
+            <a href="https://t.me/MetaenGuerra1" target="_blank" rel="noopener" class="btn btn-primary">Contactar por Telegram</a>
           </div>
         </div>
 
         <div class="hero-card">
           <div class="mock-box">
-            Consultoría clínica<br>
-            en endocrinología
+            Consultoría<br />
+            clínica en<br />
+            endocrinología
           </div>
         </div>
       </div>
@@ -488,130 +529,179 @@
     <section>
       <div class="container">
         <div class="section-head">
+          <h2>Servicios</h2>
+          <p>
+            Se brindan los siguientes servicios, en forma de derivación con indicaciones científicas
+            para que el paciente las solicite a su médico local, con orientación clínica y enfoque
+            preventivo y de resolución.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <h3>Tratamiento integral contra el Estrés</h3>
+            <p>Evaluación del impacto del estrés sobre el equilibrio hormonal y la capacidad funcional general.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>Tratamiento a todos los tipos de tiroides</h3>
+            <p>Atención clínica orientada a alteraciones tiroideas con criterio científico y manejo personalizado.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>Control de diabetes sin dietas restrictivas</h3>
+            <p>Enfoque práctico para el control metabólico con menor restricción, mayor comprensión y mejor adherencia.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>Manejo de obesidad y síndrome metabólico generalizado</h3>
+            <p>Abordaje integral de carga metabólica, resistencia y cambios de salud a mediano y largo plazo.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>Recuperación de cabello por modulación hormonal</h3>
+            <p>Valoración de factores hormonales relacionados con salud capilar y equilibrio sistémico.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>Optimización de función prostática</h3>
+            <p>Evaluación clínica de factores vinculados con función prostática y bienestar masculino.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>Osteoporosis y metabolismo óseo</h3>
+            <p>Revisión del entorno hormonal y metabólico relacionado con densidad ósea y salud mineral.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>Protocolos globales de medicina preventiva</h3>
+            <p>Propuesta de seguimiento preventivo con enfoque preventivo y de optimización funcional.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>Orientación a su médico local</h3>
+            <p>Todo tratamiento se entrega con un marco científico orientado a que el profesional local pueda ejecutar adecuadamente.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why">
+      <div class="container">
+        <div class="section-head">
           <h2>¿Por qué los pacientes nos eligen?</h2>
           <p>
-            Porque cada caso se analiza con profundidad, responsabilidad y un criterio médico
-            serio, adaptado a la realidad clínica de cada persona.
+            Enfoque científico pionero, criterio moderno y atención personalizada. Los servicios
+            se ofrecen con conocimiento avanzado, basado en estudios recientes y en una lectura
+            directa de la ciencia antes de que llegue a la práctica médica general.
           </p>
         </div>
 
         <div class="why-grid">
-          <article class="info-card">
-            <span class="number">01</span>
+          <div class="why-box">
             <h3>Diagnóstico claro</h3>
-            <p>Analizamos la historia clínica, los síntomas y los datos médicos con rigor.</p>
-          </article>
+            <p>Cada caso se analiza con profundidad, sin improvisar, con mirada clínica y técnica.</p>
+          </div>
 
-          <article class="info-card">
-            <span class="number">02</span>
+          <div class="why-box">
             <h3>Enfoque integral</h3>
             <p>Consideramos hormonal, metabólico, emocional y del estilo de vida para una atención real.</p>
-          </article>
+          </div>
 
-          <article class="info-card">
-            <span class="number">03</span>
-            <h3>Atención personalizada</h3>
-            <p>No aplicamos soluciones genéricas: cada plan se adapta al caso y al paciente.</p>
-          </article>
+          <div class="why-box">
+            <h3>Velocidad de aplicación científica</h3>
+            <p>Si un problema de salud existe hoy, ya no tiene por qué esperar años para ser respondido con criterio actualizado.</p>
+          </div>
 
-          <article class="info-card">
-            <span class="number">04</span>
-            <h3>Trato humano</h3>
-            <p>Escuchamos, explicamos y acompañamos con respeto, discreción y profesionalismo.</p>
-          </article>
+          <div class="why-box">
+            <h3>Trato humano y profesional</h3>
+            <p>Se trabaja con respeto, claridad y una relación basada en la confianza del paciente.</p>
+          </div>
+        </div>
+
+        <div class="feature-list" style="margin-top: 22px;">
+          <div class="feature">
+            <h3>Marcando el ritmo a la comunidad médica desde la comunidad científica europea</h3>
+            <p>Se incorpora la perspectiva más actual de la investigación aplicada a la práctica clínica.</p>
+          </div>
+
+          <div class="feature">
+            <h3>Metodología basada en técnicas de vanguardia científica</h3>
+            <p>Se trabaja con criterios de alta exigencia y decisiones guidas por evidencia disponible.</p>
+          </div>
+
+          <div class="feature">
+            <h3>Protocolos personales, informes e indicaciones por escrito</h3>
+            <p>Se entrega un marco claro para que el paciente y su médico local puedan actuar con certeza.</p>
+          </div>
+
+          <div class="feature">
+            <h3>Autor de artículos y libros científicos</h3>
+            <p>Se combina la práctica con una base sólida en investigación, producción y actualización profesional.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="quality">
-      <div class="container quality-grid">
-        <div class="text-block">
-          <h3>Excelencia en calidad europea</h3>
-          <p>
-            Nuestro criterio se basa en estándares europeos de evaluación clínica, enfoque científico
-            y atención responsable. Buscamos claridad, precisión y continuidad en cada proceso,
-            sin improvisaciones ni promesas vacías.
-          </p>
-        </div>
-
-        <div class="quality-box">
-          CRITERIO CLÍNICO<br>
-          DE CALIDAD EUROPEA
-        </div>
-      </div>
-    </section>
-
-    <section class="cases">
+    <section class="interdisciplinary">
       <div class="container">
         <div class="section-head">
-          <h2>Casos complejos resueltos con técnicas avanzadas actuales</h2>
-          <p>
-            Hemos logrado intervenir en situaciones clínicas difíciles mediante estrategias modernas,
-            evaluación detallada y un enfoque técnico actualizado.
-          </p>
+          <h2>Atención interdisciplinaria</h2>
         </div>
 
-        <div class="cases-grid">
-          <article class="case-card">
-            <h3>Casos de alteración hormonal difícil de interpretar</h3>
+        <div class="inter-grid">
+          <div class="info-box">
+            <h3>Revertir situaciones adversas</h3>
             <p>
-              Se abordan con un análisis preciso del contexto clínico, síntomas, laboratorio y evolución,
-              buscando encontrar la causa real y no solo el síntoma.
+              Cuando un problema sanitario no responde a una sola especialidad, es necesario
+              elevar la mirada clínica hacia la mayor especialización posible. Si la situación
+              persiste, se debe intervenir con varias áreas científicas y postdoctorales para
+              entender el problema real y resolverlo desde la base.
             </p>
-          </article>
+          </div>
 
-          <article class="case-card">
-            <h3>Pacientes con síntomas persistentes y diagnóstico incompleto</h3>
-            <p>
-              Cuando el paciente ha recorrido varios caminos sin claridad, se reevalúa el caso desde
-              una perspectiva endocrinológica más completa y estructurada.
-            </p>
-          </article>
-
-          <article class="case-card">
-            <h3>Metabolismo, energía y rendimiento</h3>
-            <p>
-              Se trabaja en la raíz de los desequilibrios que afectan peso, energía, sueño, ánimo,
-              presión o resistencia metabólica.
-            </p>
-          </article>
-
-          <article class="case-card">
-            <h3>Protocolos con criterio actualizado</h3>
-            <p>
-              La práctica combina conocimiento actual, seguimiento prudente y decisiones clínicas con
-              una mirada rigurosa y moderna.
-            </p>
-          </article>
+          <div class="specialists">
+            <div class="specialist">Endocrinólogo</div>
+            <div class="specialist">Toxicólogo genético (para enfermedades atípicas)</div>
+            <div class="specialist">Manejo de toxicidad por agentes exógenos</div>
+            <div class="specialist">Metabólogo</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="security">
+    <section class="countries">
       <div class="container">
-        <div class="security-box">
-          <h3>Respeto a la Ley de Protección de Datos y trato cordial</h3>
-          <p>
-            La información del paciente se maneja con discreción, profesionalismo y respeto a la normativa
-            vigente en materia de protección de datos. Cada consulta se desarrolla en un ambiente cordial,
-            claro y digno, con una atención centrada en la confianza, la privacidad y la responsabilidad.
-          </p>
+        <div class="section-head">
+          <h2>Países donde atendemos</h2>
+        </div>
+
+        <div class="country-list">
+          <span class="country">México</span>
+          <span class="country">Colombia</span>
+          <span class="country">Argentina</span>
+          <span class="country">Chile</span>
+          <span class="country">Perú</span>
+          <span class="country">Paraguay</span>
+          <span class="country">Costa Rica</span>
+          <span class="country">Puerto Rico</span>
+          <span class="country">Panamá</span>
+          <span class="country">Uruguay</span>
+          <span class="country">España</span>
         </div>
       </div>
     </section>
 
-    <section class="cta">
+    <section class="cta-wrap">
       <div class="container">
         <div class="cta-box">
-          <h2>¿Estás listo para mejorar tu salud?</h2>
+          <h2>Contacta, pregunta y agenda</h2>
           <p>
-            Si buscas una atención endocrinológica seria, clara y centrada en tu bienestar,
-            te ayudamos a avanzar con criterio y confianza.
+            Si deseas orientación médica, derivación o evaluar tu caso con criterio científico,
+            puedes comunicarte directamente por Telegram.
           </p>
 
-          <div class="actions" style="justify-content:center;">
-            <a href="https://t.me/MetaenGuerra" target="_blank" rel="noopener" class="btn btn-primary">Contacto</a>            
-          </div>
+          <a href="https://t.me/MetaenGuerra1" target="_blank" rel="noopener" class="btn btn-primary">T.me/MetaenGuerra1</a>
         </div>
       </div>
     </section>
@@ -621,6 +711,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <small>Consultorio de Endocrinología Científica</small>
+      <small>Contacto: T.me/MetaenGuerra1</small>
     </div>
   </footer>
 
