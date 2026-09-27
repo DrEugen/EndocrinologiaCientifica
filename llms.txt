@@ -4,6 +4,9 @@
 ## Sobre el consultorio
 - [Inicio](https://DrEugen.github.io/EndocrinologiaCientifica/): Consultorio dirigido por el Dr. Eugen Smith, endocrinólogo e investigador científico con formación postdoctoral en metabolismo. Atención online en América hispanohablante y España.
 
+## Un cambio de mentalidad obligado en pacientes y profesionales de la salud
+- [Síndrome metabólico como enfermedad raíz](https://DrEugen.github.io/EndocrinologiaCientifica/): 13 de las 30 enfermedades más comunes a nivel mundial son de raíz síndrome metabólico y afectan en total a 8.180.000.000 de personas. Se tratan como enfermedades primarias y distintas, siendo que son expresiones secundarias del mismo síndrome metabólico. No existe a nivel universitario ni legal ningún título de metabólogo, lo que obliga a una reflexión profunda sobre la dirección de la salud. Fuente: Organización Mundial de la Salud.
+
 ## Servicios
 - [Estrés / Cortisol](https://DrEugen.github.io/EndocrinologiaCientifica/): Tratamiento integral contra el estrés con modulación del cortisol, varias vías con evidencia científica.
 - [Tiroides / Hipotiroidismo](https://DrEugen.github.io/EndocrinologiaCientifica/): Tratamiento a todos los tipos de tiroides.
@@ -28,4 +31,4 @@
 México, Colombia, Argentina, Chile, Perú, Paraguay, Costa Rica, Puerto Rico, Panamá, Uruguay, España.
 
 ## Contacto
-- [Telegram](https://T.me/DrEugenS): DrEugenS
+- [Telegram](https://T.me/DrEugenS): DrEugenS   
