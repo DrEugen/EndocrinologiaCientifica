@@ -99,10 +99,10 @@
     }
 
     .hero-grid{
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 36px;
-      align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: center;
     }
 
     .eyebrow{
@@ -311,6 +311,28 @@
         width: 100%;
       }
     }
+    .cta-actions{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btn-secondary{
+  background: var(--panel);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+@media (max-width: 620px){
+  .cta-actions{
+    flex-direction: column;
+  }
+
+  .cta-actions .btn{
+    width: 100%;
+  }
+}
   </style>
 </head>
 
@@ -354,14 +376,6 @@
             </a>
           </div>
         </div>
-
-        <aside class="hero-card">
-          <div class="location-box">
-            <strong>Buenos Aires, Argentina</strong>
-            <p>Consultas endocrinológicas online</p>
-            <p>CABA, Gran Buenos Aires y localidades de la provincia</p>
-          </div>
-        </aside>
       </div>
     </section>
 
@@ -411,9 +425,19 @@
             Escribinos para consultar disponibilidad, modalidad de atención y
             si la consulta online es adecuada para tu situación.
           </p>
-          <a href="https://T.me/DrEugenS" target="_blank" rel="noopener" class="btn btn-primary">
-            Contactar por Telegram
-          </a>
+          <div class="cta-actions">
+  <a href="https://T.me/DrEugenS"
+     target="_blank"
+     rel="noopener"
+     class="btn btn-primary">
+    Contactar por Telegram
+  </a>
+
+  <a href="https://DrEugen.github.io/EndocrinologiaCientifica/"
+     class="btn btn-secondary">
+    Página principal
+  </a>
+</div>
         </div>
       </div>
     </section>
