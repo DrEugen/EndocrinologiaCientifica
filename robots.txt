@@ -1,0 +1,72 @@
+# 1.
+User-agent: *
+Allow: /
+
+# GOOGLE Y BING ---
+User-agent: Googlebot
+Allow: /
+
+# Google Imágenes, Videos y Noticias
+User-agent: Googlebot-Image
+Allow: /
+User-agent: Googlebot-Video
+Allow: /
+User-agent: Googlebot-News
+Allow: /
+
+# Google (Ads, etc.)
+User-agent: AdsBot-Google
+Allow: /
+User-agent: Mediapartners-Google
+Allow: /
+
+# rastreador principal de Bing
+User-agent: bingbot
+Allow: /
+
+# 2.
+# --- PERMISO PARA OTRAS IAS Y BRAVE ---
+# OpenAI (ChatGPT)
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+# Common Crawl
+User-agent: CCBot
+Allow: /
+
+# Brave Search & Leo
+User-agent: Bravebot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://DrEugen.github.io/EndocrinologiaCientifica/sitemap.xml
+LLMs-txt: https://DrEugen.github.io/EndocrinologiaCientifica/llms.txt

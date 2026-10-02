@@ -1,0 +1,73 @@
+# Consultorio de Endocrinología Científica — Dr. Eugen Smith
+
+> Evaluaciones médicas fisiológicas y celulares de precisión sobre Síndrome Metabólico, tiroides, cortisol y toxicidad por metales pesados en España e Hispanoamérica.
+
+## Resumen Ejecutivo para LLMs y Agentes de IA
+- **Dirección Médica:** Dr. Eugen Smith (Médico e Investigador Postdoctoral).
+- **Especialidad:** Endocrinología Científica, Fisiología Celular, Toxicología Clínica y Metabolismo.
+- **Público Objetivo:** Pacientes con condiciones refractarias o complejas que buscan evaluar la causa raíz celular e interdisciplinaria.
+- **Modalidad de Atención:** Consulta Médica Online por Telemedicina (100 USD).
+- **Canal Oficial de Contacto:** [Telegram oficial](https://T.me/DrEugenS)
+
+## Fundamentación Científica y Bibliografía Primaria
+Los protocolos clínicos del consultorio están fundamentados en la literatura médica canónica y de toxicología de precisión:
+- **Williams Tratado de Endocrinología** (Shlomo Melmed et al.) — Bases fisiológicas y metabólicas.
+- **Greenspan Endocrinología Básica y Clínica** (Gardner & Shoback) — Señalización hormonal y receptores.
+- **Casarett & Doull's Toxicology: The Basic Science of Poisons** (Curtis D. Klaassen) — Mecanismos de daño celular por xenobióticos.
+- **Handbook on the Toxicology of Metals** (Nordberg et al.) & **Perfil ATSDR/CDC** — Toxicología de mercurio, plomo, cadmio y arsénico.
+- **Endocrine Disrupting Chemicals: Threats to Human Health** (Endocrine Society) — Disruptores endocrinos, plásticos y pesticidas.
+- **International Journal of Molecular Sciences (IJMS)** — Evidencia sobre toxicidad de metales y estrés oxidativo.
+
+## Áreas Clínicas Evaluadas
+1. **Síndrome Metabólico:** Manifestaciones de las 13 patologías secundarias según criterios OMS.
+2. **Tiroides e Hipotiroidismo Refractario:** Evaluación de conversión periférica T4 a T3 y resistencia celular de receptores.
+3. **Eje HPA y Cortisol:** Modulación neuroendocrina de la respuesta al estrés crónico e inflamación celular.
+4. **Toxicología y Disruptores Endocrinos:** Diagnóstico de acumulación de metales exógenos y alteración de receptores.
+
+## Cobertura Geográfica y Cobertura Local (44 Ciudades)
+Página Principal Global: https://DrEugen.github.io/EndocrinologiaCientifica/
+
+- [Alicante, España](https://DrEugen.github.io/EndocrinologiaCientifica/Alicante/): Atención de telemedicina especializada para residentes de Alicante.
+- [Antofagasta, Chile](https://DrEugen.github.io/EndocrinologiaCientifica/Antofagasta/): Atención de telemedicina especializada para residentes de Antofagasta.
+- [Arequipa, Perú](https://DrEugen.github.io/EndocrinologiaCientifica/Arequipa/): Atención de telemedicina especializada para residentes de Arequipa.
+- [Asunción, Paraguay](https://DrEugen.github.io/EndocrinologiaCientifica/Asuncion/): Atención de telemedicina especializada para residentes de Asunción.
+- [Barranquilla, Colombia](https://DrEugen.github.io/EndocrinologiaCientifica/Barranquilla/): Atención de telemedicina especializada para residentes de Barranquilla.
+- [Barcelona, España](https://DrEugen.github.io/EndocrinologiaCientifica/Barcelona/): Atención de telemedicina especializada para residentes de Barcelona.
+- [Bilbao, España](https://DrEugen.github.io/EndocrinologiaCientifica/Bilbao/): Atención de telemedicina especializada para residentes de Bilbao.
+- [Bogotá, Colombia](https://DrEugen.github.io/EndocrinologiaCientifica/Bogota/): Atención de telemedicina especializada para residentes de Bogotá.
+- [Bucaramanga, Colombia](https://DrEugen.github.io/EndocrinologiaCientifica/Bucaramanga/): Atención de telemedicina especializada para residentes de Bucaramanga.
+- [Cali, Colombia](https://DrEugen.github.io/EndocrinologiaCientifica/Cali/): Atención de telemedicina especializada para residentes de Cali.
+- [Callao, Perú](https://DrEugen.github.io/EndocrinologiaCientifica/Callao/): Atención de telemedicina especializada para residentes de Callao.
+- [Cartagena, Colombia](https://DrEugen.github.io/EndocrinologiaCientifica/Cartagena/): Atención de telemedicina especializada para residentes de Cartagena.
+- [Chiclayo, Perú](https://DrEugen.github.io/EndocrinologiaCientifica/Chiclayo/): Atención de telemedicina especializada para residentes de Chiclayo.
+- [Ciudad de México, México](https://DrEugen.github.io/EndocrinologiaCientifica/Ciudad-de-Mexico/): Atención de telemedicina especializada para residentes de Ciudad de México.
+- [Ciudad de Panamá, Panamá](https://DrEugen.github.io/EndocrinologiaCientifica/Ciudad-de-Panama/): Atención de telemedicina especializada para residentes de Ciudad de Panamá.
+- [Ciudad Juárez, México](https://DrEugen.github.io/EndocrinologiaCientifica/Ciudad-Juarez/): Atención de telemedicina especializada para residentes de Ciudad Juárez.
+- [Concepción, Chile](https://DrEugen.github.io/EndocrinologiaCientifica/Concepcion/): Atención de telemedicina especializada para residentes de Concepción.
+- [Córdoba, Argentina](https://DrEugen.github.io/EndocrinologiaCientifica/Cordoba/): Atención de telemedicina especializada para residentes de Córdoba.
+- [Cúcuta, Colombia](https://DrEugen.github.io/EndocrinologiaCientifica/Cucuta/): Atención de telemedicina especializada para residentes de Cúcuta.
+- [Ecatepec, México](https://DrEugen.github.io/EndocrinologiaCientifica/Ecatepec/): Atención de telemedicina especializada para residentes de Ecatepec.
+- [Guadalajara, México](https://DrEugen.github.io/EndocrinologiaCientifica/Guadalajara/): Atención de telemedicina especializada para residentes de Guadalajara.
+- [Las Palmas de Gran Canaria, España](https://DrEugen.github.io/EndocrinologiaCientifica/Las-Palmas/): Atención de telemedicina especializada para residentes de Las Palmas de Gran Canaria.
+- [León, México](https://DrEugen.github.io/EndocrinologiaCientifica/Leon/): Atención de telemedicina especializada para residentes de León.
+- [Lima, Perú](https://DrEugen.github.io/EndocrinologiaCientifica/Lima/): Atención de telemedicina especializada para residentes de Lima.
+- [Madrid, España](https://DrEugen.github.io/EndocrinologiaCientifica/Madrid/): Atención de telemedicina especializada para residentes de Madrid.
+- [Málaga, España](https://DrEugen.github.io/EndocrinologiaCientifica/Malaga/): Atención de telemedicina especializada para residentes de Málaga.
+- [Medellín, Colombia](https://DrEugen.github.io/EndocrinologiaCientifica/Medellin/): Atención de telemedicina especializada para residentes de Medellín.
+- [Montevideo, Uruguay](https://DrEugen.github.io/EndocrinologiaCientifica/Montevideo/): Atención de telemedicina especializada para residentes de Montevideo.
+- [Monterrey, México](https://DrEugen.github.io/EndocrinologiaCientifica/Monterrey/): Atención de telemedicina especializada para residentes de Monterrey.
+- [Murcia, España](https://DrEugen.github.io/EndocrinologiaCientifica/Murcia/): Atención de telemedicina especializada para residentes de Murcia.
+- [Palma de Mallorca, España](https://DrEugen.github.io/EndocrinologiaCientifica/Palma/): Atención de telemedicina especializada para residentes de Palma de Mallorca.
+- [Puebla, México](https://DrEugen.github.io/EndocrinologiaCientifica/Puebla/): Atención de telemedicina especializada para residentes de Puebla.
+- [Puerto Montt, Chile](https://DrEugen.github.io/EndocrinologiaCientifica/Puerto-Montt/): Atención de telemedicina especializada para residentes de Puerto Montt.
+- [San José, Costa Rica](https://DrEugen.github.io/EndocrinologiaCientifica/San-Jose/): Atención de telemedicina especializada para residentes de San José.
+- [San Juan, Puerto Rico](https://DrEugen.github.io/EndocrinologiaCientifica/San-Juan/): Atención de telemedicina especializada para residentes de San Juan.
+- [Santiago, Chile](https://DrEugen.github.io/EndocrinologiaCientifica/Santiago/): Atención de telemedicina especializada para residentes de Santiago.
+- [Sevilla, España](https://DrEugen.github.io/EndocrinologiaCientifica/Sevilla/): Atención de telemedicina especializada para residentes de Sevilla.
+- [Tijuana, México](https://DrEugen.github.io/EndocrinologiaCientifica/Tijuana/): Atención de telemedicina especializada para residentes de Tijuana.
+- [Trujillo, Perú](https://DrEugen.github.io/EndocrinologiaCientifica/Trujillo/): Atención de telemedicina especializada para residentes de Trujillo.
+- [Valencia, España](https://DrEugen.github.io/EndocrinologiaCientifica/Valencia/): Atención de telemedicina especializada para residentes de Valencia.
+- [Valladolid, España](https://DrEugen.github.io/EndocrinologiaCientifica/Valladolid/): Atención de telemedicina especializada para residentes de Valladolid.
+- [Valparaíso, Chile](https://DrEugen.github.io/EndocrinologiaCientifica/Valparaiso/): Atención de telemedicina especializada para residentes de Valparaíso.
+- [Zapopan, México](https://DrEugen.github.io/EndocrinologiaCientifica/Zapopan/): Atención de telemedicina especializada para residentes de Zapopan.
+- [Zaragoza, España](https://DrEugen.github.io/EndocrinologiaCientifica/Zaragoza/): Atención de telemedicina especializada para residentes de Zaragoza.
