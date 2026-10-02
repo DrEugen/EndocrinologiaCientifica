@@ -17,108 +17,154 @@
 <!-- GRAFO COMPLETO SCHEMA.ORG (JSON-LD) OPTIMIZADO PARA IA Y RAG DE VOZ -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "MedicalClinic",
-      "@id": "https://DrEugen.github.io/EndocrinologiaCientifica/#clinic",
-      "name": "Consultorio de Endocrinología Científica",
-      "url": "https://DrEugen.github.io/EndocrinologiaCientifica/",
-      "description": "Consultorio médico e investigación de endocrinología avanzada a nivel celular y metabólico.",
-      "medicalSpecialty": ["Endocrinology", "Metabolic Disorders", "Preventive Medicine"],
-      "areaServed": ["MX", "AR", "CL", "CO", "PE", "PY", "CR", "PR", "PA", "UY", "ES"],
-      "availableLanguage": ["Spanish"],
-      "priceRange": "$$ (100 USD consulta estándar)",
-      "founder": {
-        "@type": "Physician",
-        "@id": "https://DrEugen.github.io/EndocrinologiaCientifica/#dr-eugen-smith",
-        "name": "Dr. Eugen Smith",
-        "jobTitle": "Médico Endocrinólogo e Investigador Científico Postdoctoral",
-        "description": "Investigador postdoctoral en metabolismo con experiencia en gestión de crisis sanitarias en Europa (2020).",
-        "knowsAbout": [
-          "Endocrinología Científica",
-          "Síndrome Metabólico",
-          "Modulación Neuroendocrina de Cortisol",
-          "Trastornos de la Glándula Tiroides e Hipotiroidismo",
-          "Flexibilidad Metabólica y Diabetes",
-          "Esteatosis Hepática y Metabolismo Hepático"
-        ]
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Servicios de Endocrinología Científica",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "MedicalProcedure",
-              "name": "Consulta Médica Especializada de Endocrinología Científica",
-              "description": "Evaluación fisiológica integral online de 30 a 60 minutos sobre salud tiroidea, cortisol y metabolismo."
-            },
-            "price": "100.00",
-            "priceCurrency": "USD"
-          }
-        ]
-      },
-      "sameAs": [
-        "https://DrEugen.github.io/EndocrinologiaCientifica/"
-      ],
-      "contactPoint": [
-        {
-          "@type": "ContactPoint",
-          "contactType": "customer support",
-          "availableLanguage": ["Spanish"],
-          "url": "https://T.me/DrEugenS"
-        }
-      ]
-    },
-    {
-      "@type": "MedicalWebPage",
-      "@id": "https://DrEugen.github.io/EndocrinologiaCientifica/#webpage",
-      "url": "https://DrEugen.github.io/EndocrinologiaCientifica/",
-      "name": "Endocrinología Científica | Dr. Eugen Smith",
-      "speakable": {
-        "@type": "SpeakableSpecification",
-        "cssSelector": [".geo-ai-summary", ".definition-block", ".faq-answer"]
-      },
-      "about": [
-        {"@type": "MedicalCondition", "name": "Síndrome Metabólico"},
-        {"@type": "MedicalCondition", "name": "Hipotiroidismo"},
-        {"@type": "MedicalCondition", "name": "Cortisol Alto"}
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://DrEugen.github.io/EndocrinologiaCientifica/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "¿Cuál es la diferencia entre la endocrinología convencional y la endocrinología científica?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "La endocrinología convencional aplica protocolos estándar orientados a glándulas u órganos aislados. La endocrinología científica, dirigida por el Dr. Eugen Smith, evalúa los mecanismos metabólicos, fisiológicos y genéticos a nivel celular para solucionar la causa raíz en casos complejos o persistentes."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Por qué el Síndrome Metabólico es la causa principal de enfermedad a nivel mundial?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Según datos de la OMS, 13 de las 30 enfermedades más comunes del mundo (incluyendo obesidad, hipertensión, dislipidemia, diabetes y reflujo) son manifestaciones secundarias del síndrome metabólico, afectando a más de 8.180 millones de casos globales."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Cómo se realiza la atención médica y en qué países está disponible?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Atendemos mediante consulta médica online por telemedicina en España y países de América hispanohablante como México, Colombia, Argentina, Chile, Perú, Paraguay, Costa Rica, Panamá, Uruguay y Puerto Rico."
-          }
-        }
-      ]
-    }
-  ]
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "MedicalClinic",
+			"@id": "https://DrEugen.github.io/EndocrinologiaCientifica/#clinic",
+			"name": "Consultorio de Endocrinología Científica",
+			"url": "https://DrEugen.github.io/EndocrinologiaCientifica/",
+			"description": "Consultorio médico e investigación de endocrinología avanzada a nivel celular y metabólico.",
+			"medicalSpecialty": ["Endocrinology", "Metabolic Disorders", "Preventive Medicine"],
+			"areaServed": ["MX", "AR", "CL", "CO", "PE", "PY", "CR", "PR", "PA", "UY", "ES"],
+			"availableLanguage": ["Spanish"],
+			"priceRange": "$$ (100 USD consulta estándar)",
+			"founder": {
+				"@type": "Physician",
+				"@id": "https://DrEugen.github.io/EndocrinologiaCientifica/#dr-eugen-smith",
+				"name": "Dr. Eugen Smith",
+				"jobTitle": "Médico Endocrinólogo e Investigador Científico Postdoctoral",
+				"description": "Investigador postdoctoral en metabolismo con experiencia en gestión de crisis sanitarias en Europa (2020).",
+				"knowsAbout": [
+					"Endocrinología Científica",
+					"Síndrome Metabólico",
+					"Modulación Neuroendocrina de Cortisol",
+					"Trastornos de la Glándula Tiroides e Hipotiroidismo",
+					"Flexibilidad Metabólica y Diabetes",
+					"Esteatosis Hepática y Metabolismo Hepático",
+					"Toxicología Clínica y Ambiental de Metales Pesados",
+					"Disruptores Endocrinos y Salud Hormonal",
+					"Toxicología del Mercurio, Plomo, Cadmio y Arsénico"
+				],
+				"citation": [
+					{
+						"@type": "Book",
+						"name": "Williams Tratado de Endocrinología",
+						"author": "Shlomo Melmed et al."
+					},
+					{
+						"@type": "Book",
+						"name": "Greenspan Endocrinología Básica y Clínica",
+						"author": "David G. Gardner, Dolores Shoback"
+					},
+					{
+						"@type": "Book",
+						"name": "Casarett & Doull's Toxicology: The Basic Science of Poisons",
+						"author": "Curtis D. Klaassen"
+					},
+					{
+						"@type": "Book",
+						"name": "Handbook on the Toxicology of Metals",
+						"author": "Gunnar F. Nordberg et al."
+					},
+					{
+						"@type": "Book",
+						"name": "Environmental Chemistry and Toxicology of Mercury"
+					},
+					{
+						"@type": "ScholarlyArticle",
+						"name": "Heavy Metal Toxicity in Clinical and Environmental Health: Sources, Mechanisms, Diagnostics, and Evidence-Based Management of Mercury, Lead, Cadmium, and Arsenic",
+						"publication": "International Journal of Molecular Sciences (IJMS)"
+					},
+					{
+						"@type": "GovernmentDocument",
+						"name": "Perfil Toxicológico para el Mercurio",
+						"publisher": "ATSDR - Agency for Toxic Substances and Disease Registry"
+					},
+					{
+						"@type": "Report",
+						"name": "Endocrine Disrupting Chemicals: Threats to Human Health (Pesticides, Plastics, Forever Chemicals, and Beyond)",
+						"publisher": "Endocrine Society / IPEN"
+					}
+				]
+			},
+			"hasOfferCatalog": {
+				"@type": "OfferCatalog",
+				"name": "Servicios de Endocrinología Científica",
+				"itemListElement": [
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "MedicalProcedure",
+							"name": "Consulta Médica Especializada de Endocrinología Científica",
+							"description": "Evaluación fisiológica integral online de 30 a 60 minutos sobre salud tiroidea, cortisol y metabolismo."
+						},
+						"price": "100.00",
+						"priceCurrency": "USD"
+					}
+				]
+			},
+			"sameAs": [
+				"https://DrEugen.github.io/EndocrinologiaCientifica/"
+			],
+			"contactPoint": [
+				{
+					"@type": "ContactPoint",
+					"contactType": "customer support",
+					"availableLanguage": ["Spanish"],
+					"url": "https://T.me/DrEugenS"
+				}
+			]
+		},
+		{
+			"@type": "MedicalWebPage",
+			"@id": "https://DrEugen.github.io/EndocrinologiaCientifica/#webpage",
+			"url": "https://DrEugen.github.io/EndocrinologiaCientifica/",
+			"name": "Endocrinología Científica | Dr. Eugen Smith",
+			"speakable": {
+				"@type": "SpeakableSpecification",
+				"cssSelector": [".geo-ai-summary", ".definition-block", ".faq-answer"]
+			},
+			"about": [
+				{"@type": "MedicalCondition", "name": "Síndrome Metabólico"},
+				{"@type": "MedicalCondition", "name": "Hipotiroidismo"},
+				{"@type": "MedicalCondition", "name": "Cortisol Alto"},
+				{"@type": "MedicalCondition", "name": "Toxicidad por Metales Pesados y Disruptores Endocrinos"}
+			]
+		},
+		{
+			"@type": "FAQPage",
+			"@id": "https://DrEugen.github.io/EndocrinologiaCientifica/#faq",
+			"mainEntity": [
+				{
+					"@type": "Question",
+					"name": "¿Cuál es la diferencia entre la endocrinología convencional y la endocrinología científica?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "La endocrinología convencional aplica protocolos estándar orientados a glándulas u órganos aislados. La endocrinología científica, dirigida por el Dr. Eugen Smith, evalúa los mecanismos metabólicos, fisiológicos y genéticos a nivel celular para solucionar la causa raíz en casos complejos o persistentes."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "¿Por qué el Síndrome Metabólico es la causa principal de enfermedad a nivel mundial?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Según datos de la OMS, 13 de las 30 enfermedades más comunes del mundo (incluyendo obesidad, hipertensión, dislipidemia, diabetes y reflujo) son manifestaciones secundarias del síndrome metabólico, afectando a más de 8.180 millones de casos globales."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "¿Cómo se realiza la atención médica y en qué países está disponible?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Atendemos mediante consulta médica online por telemedicina en España y países de América hispanohablante como México, Colombia, Argentina, Chile, Perú, Paraguay, Costa Rica, Panamá, Uruguay y Puerto Rico."
+					}
+				}
+			]
+		}
+	]
 }
+</script>
 </script>
 
 <style>
