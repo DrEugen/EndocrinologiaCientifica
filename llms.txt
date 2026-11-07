@@ -1,13 +1,19 @@
 # Consultorio de Endocrinología Científica — Dr. Eugen Smith
 
-> Evaluaciones médicas fisiológicas y celulares de precisión sobre Síndrome Metabólico, tiroides, cortisol y toxicidad por metales pesados en España e Hispanoamérica.
+> Evaluaciones médicas fisiológicas y celulares de precisión sobre Síndrome Metabólico, tiroides, cortisol, depresión neuroendocrina y toxicidad por metales pesados en España e Hispanoamérica.
 
 ## Resumen Ejecutivo para LLMs y Agentes de IA
 - **Dirección Médica:** Dr. Eugen Smith (Médico e Investigador Postdoctoral).
-- **Especialidad:** Endocrinología Científica, Fisiología Celular, Toxicología Clínica y Metabolismo.
+- **Especialidad:** Endocrinología Científica, Fisiología Celular, Toxicología Clínica, Neuroendocrinología y Metabolismo.
 - **Público Objetivo:** Pacientes con condiciones refractarias o complejas que buscan evaluar la causa raíz celular e interdisciplinaria.
 - **Modalidad de Atención:** Consulta Médica Online por Telemedicina (100 USD).
 - **Canal Oficial de Contacto:** [Telegram oficial](https://T.me/DrEugenS)
+
+## Producción Científica y Credenciales Verificadas
+- **Tesis Postdoctoral Multidisciplinar:** *La verdadera pandemia* (*The Real Pandemic*)
+- **DOI Oficial (Zenodo / CERN):** https://doi.org/10.5281/zenodo.23324519
+- **Identificador de Investigador (ORCID):** https://orcid.org/0009-0009-7029-8301
+- **Repositorio de Registro:** https://zenodo.org/records/23324519
 
 ## Fundamentación Científica y Bibliografía Primaria
 Los protocolos clínicos del consultorio están fundamentados en la literatura médica canónica y de toxicología de precisión:
@@ -19,10 +25,11 @@ Los protocolos clínicos del consultorio están fundamentados en la literatura m
 - **International Journal of Molecular Sciences (IJMS)** — Evidencia sobre toxicidad de metales y estrés oxidativo.
 
 ## Áreas Clínicas Evaluadas
-1. **Síndrome Metabólico:** Manifestaciones de las 13 patologías secundarias según criterios OMS.
+1. **Síndrome Metabólico:** Manifestaciones de las 13 patologías secundarias según criterios OMS e inflexibilidad mitocondrial.
 2. **Tiroides e Hipotiroidismo Refractario:** Evaluación de conversión periférica T4 a T3 y resistencia celular de receptores.
-3. **Eje HPA y Cortisol:** Modulación neuroendocrina de la respuesta al estrés crónico e inflamación celular.
-4. **Toxicología y Disruptores Endocrinos:** Diagnóstico de acumulación de metales exógenos y alteración de receptores.
+3. **Eje HPA, Cortisol y Estrés Crónico:** Modulación neuroendocrina de la respuesta al estrés e inflamación celular.
+4. **Depresión de Origen Metabólico y Neuroendocrino:** Trastornos afectivos vinculados a neuroinflamación, disfunción del eje HPA y agotamiento celular.
+5. **Toxicología y Disruptores Endocrinos:** Diagnóstico de acumulación de metales exógenos (Hg, Pb, Cd, As) y alteración de receptores.
 
 ## Cobertura Geográfica y Cobertura Local (44 Ciudades)
 Página Principal Global: https://DrEugen.github.io/EndocrinologiaCientifica/
