@@ -4,21 +4,21 @@ Allow: /
 
 # GOOGLE Y BING ---
 User-agent: Googlebot
-Allow: /
+Disallow: /
 
 # Google Imágenes, Videos y Noticias
 User-agent: Googlebot-Image
-Allow: /
+Disallow: /
 User-agent: Googlebot-Video
-Allow: /
+Disallow: /
 User-agent: Googlebot-News
-Allow: /
+Disallow: /
 
 # Google (Ads, etc.)
 User-agent: AdsBot-Google
-Allow: /
+Disallow: /
 User-agent: Mediapartners-Google
-Allow: /
+Disallow: /
 
 # rastreador principal de Bing
 User-agent: bingbot
